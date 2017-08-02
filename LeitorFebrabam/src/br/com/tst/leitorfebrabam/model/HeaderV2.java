@@ -20,6 +20,7 @@ public class HeaderV2 {
     private String nomCliente;
     private String cgcCliente;
     private String identContaUnica;
+    private String mesReferencia;
     private String dtaVencimento;
     private String dtaEmissao;
 
@@ -111,9 +112,17 @@ public class HeaderV2 {
         this.dtaEmissao = dtaEmissao;
     }
 
+    public String getMesReferencia() {
+        return mesReferencia;
+    }
+
+    public void setMesReferencia(String mesReferencia) {
+        this.mesReferencia = mesReferencia;
+    }
+
     @Override
     public String toString() {
-        return "HeaderV2{" + "tipoRegistro=" + tipoRegistro + ", controleSeguencialGravacao=" + controleSeguencialGravacao + ", dtaGeracaoArquivo=" + dtaGeracaoArquivo + ", operadora=" + operadora + ", ufOperadora=" + ufOperadora + ", codCliente=" + codCliente + ", nomCliente=" + nomCliente + ", cgcCliente=" + cgcCliente + ", indetContaUnica=" + identContaUnica + ", dtaVencimento=" + dtaVencimento + ", dtaEmissao=" + dtaEmissao + '}';
+        return "HeaderV2{" + "tipoRegistro=" + tipoRegistro + ", controleSeguencialGravacao=" + controleSeguencialGravacao + ", dtaGeracaoArquivo=" + dtaGeracaoArquivo + ", operadora=" + operadora + ", ufOperadora=" + ufOperadora + ", codCliente=" + codCliente + ", nomCliente=" + nomCliente + ", cgcCliente=" + cgcCliente + ", identContaUnica=" + identContaUnica + ", mesReferencia=" + mesReferencia + ", dtaVencimento=" + dtaVencimento + ", dtaEmissao=" + dtaEmissao + '}';
     }
 
 }

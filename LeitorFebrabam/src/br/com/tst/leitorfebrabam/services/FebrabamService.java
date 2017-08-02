@@ -566,10 +566,7 @@ public class FebrabamService {
     }
 
     private String generateV3(BufferedReader readFile, String line) {
-        JProgressBar progressBar = new JProgressBar();
-        
-        progressBar.setMaximum(lengthFile(readFile));
-        progressBar.setValue(0);
+
         
         int progress = 0;
         String processDate = getCurrentDate();
@@ -852,7 +849,7 @@ public class FebrabamService {
                     write.print("Sigla da Categoria Chamada: ");
                     write.println(line.substring(198, 201));
                     write.print("Descrição da Categoria Chamada: ");
-                    write.println(line.substring(221, 226));
+                    write.println(line.substring(201, 226));
                     write.print("Horário da ligação: ");
                     write.println(line.substring(226, 232));
                     write.print("Alíquota ICMS: ");
@@ -971,9 +968,8 @@ public class FebrabamService {
                 }
                 if (line.substring(0, 2) == "99") {
 
-                }
-                progress++;
-                progressBar.setValue(progress);
+                }               
+                
                 line = readFile.readLine();
             }
 
