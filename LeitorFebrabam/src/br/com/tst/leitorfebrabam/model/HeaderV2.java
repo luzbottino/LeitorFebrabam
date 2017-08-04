@@ -11,7 +11,7 @@ package br.com.tst.leitorfebrabam.model;
  */
 public class HeaderV2 {
 
-    private char tipoRegistro;
+    private String tipoRegistro;
     private int controleSeguencialGravacao;
     private String dtaGeracaoArquivo;
     private String operadora;
@@ -24,11 +24,11 @@ public class HeaderV2 {
     private String dtaVencimento;
     private String dtaEmissao;
 
-    public char getTipoRegistro() {
+    public String getTipoRegistro() {
         return tipoRegistro;
     }
 
-    public void setTipoRegistro(char tipoRegistro) {
+    public void setTipoRegistro(String tipoRegistro) {
         this.tipoRegistro = tipoRegistro;
     }
 

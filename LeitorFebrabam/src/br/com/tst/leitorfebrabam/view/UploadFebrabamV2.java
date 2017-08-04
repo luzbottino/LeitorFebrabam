@@ -61,9 +61,10 @@ public class UploadFebrabamV2 extends javax.swing.JFrame {
 
         jTextFieldFebramPath.setEditable(false);
         jTextFieldFebramPath.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldFebramPath.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
 
         jButtonOpen.setBackground(new java.awt.Color(0, 153, 255));
-        jButtonOpen.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
+        jButtonOpen.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jButtonOpen.setForeground(new java.awt.Color(255, 255, 255));
         jButtonOpen.setText("Abrir");
         jButtonOpen.addActionListener(new java.awt.event.ActionListener() {
@@ -72,12 +73,12 @@ public class UploadFebrabamV2 extends javax.swing.JFrame {
             }
         });
 
-        jLabelTitle.setFont(new java.awt.Font("Courier New", 1, 24)); // NOI18N
+        jLabelTitle.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
         jLabelTitle.setForeground(new java.awt.Color(0, 153, 255));
         jLabelTitle.setText("LEITOR FEBRABAM");
 
         jButtonRead.setBackground(new java.awt.Color(0, 153, 255));
-        jButtonRead.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
+        jButtonRead.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jButtonRead.setForeground(new java.awt.Color(255, 255, 255));
         jButtonRead.setText("Gravar");
         jButtonRead.addActionListener(new java.awt.event.ActionListener() {
@@ -87,7 +88,7 @@ public class UploadFebrabamV2 extends javax.swing.JFrame {
         });
 
         jButtonShow.setBackground(new java.awt.Color(0, 153, 255));
-        jButtonShow.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
+        jButtonShow.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jButtonShow.setForeground(new java.awt.Color(255, 255, 255));
         jButtonShow.setText("Exibir");
         jButtonShow.addActionListener(new java.awt.event.ActionListener() {
@@ -269,6 +270,6 @@ public class UploadFebrabamV2 extends javax.swing.JFrame {
     private void processV2(Febrabam febrabam) {
         ProgressBar progressBar = new ProgressBar();
         progressBar.setVisible(true);
-        progressBar.readV2(febrabam);
+        progressBar.readV2(febrabam, this);
     }
 }

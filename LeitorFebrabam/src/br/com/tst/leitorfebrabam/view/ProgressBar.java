@@ -10,6 +10,7 @@ import br.com.tst.leitorfebrabam.file.Febrabam;
 import br.com.tst.leitorfebrabam.worker.GenerateV2View;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import javax.swing.JFrame;
 
 /**
  *
@@ -89,9 +90,9 @@ public class ProgressBar extends javax.swing.JFrame {
     private javax.swing.JProgressBar jProgressBar;
     // End of variables declaration//GEN-END:variables
 
-    void readV2(Febrabam febrabam) {
+    void readV2(Febrabam febrabam, JFrame frame) {
         jLabelMessage.setText("Lendo arquivo Febrabam V2...");
-        final GenerateV2View v2View = new GenerateV2View(febrabam);
+        final GenerateV2View v2View = new GenerateV2View(febrabam, this, frame);
         v2View.addPropertyChangeListener(new PropertyChangeListener() {
 
             @Override
@@ -103,6 +104,6 @@ public class ProgressBar extends javax.swing.JFrame {
                 }
             }
         });
-        v2View.execute();
+        v2View.execute();        
     }
 }

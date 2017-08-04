@@ -12,6 +12,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -23,9 +25,13 @@ public class Febrabam {
     private BufferedReader br;
     private String line;
 
-    public void openFile(String path) throws FileNotFoundException {
+    public void openFile(String path) {
         this.path = path;
-        br = new BufferedReader(new FileReader(path));
+        try {
+            br = new BufferedReader(new FileReader(path));
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Febrabam.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public void readLine() throws IOException {
@@ -33,6 +39,14 @@ public class Febrabam {
     }
     public String getLine(){
         return line;
+    }
+    
+    public void closeFebrabam(){
+        try {
+            br.close();
+        } catch (IOException ex) {
+            Logger.getLogger(Febrabam.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public boolean isV2() throws IOException {
