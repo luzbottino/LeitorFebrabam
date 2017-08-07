@@ -34,17 +34,245 @@ public class ResumoV2Detail extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabelNumTelefone = new javax.swing.JLabel();
+        jLabelTitle = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jLabelTipoRegistro = new javax.swing.JLabel();
+        jLabelControleSequencialGravacao = new javax.swing.JLabel();
+        jLabelIdentificadorContaUnica = new javax.swing.JLabel();
+        jLabelDataVencimento = new javax.swing.JLabel();
+        jLabelDataEmissao = new javax.swing.JLabel();
+        jLabelIdentificadorUnicoRecurso = new javax.swing.JLabel();
+        jLabelCnlRecursoReferencia = new javax.swing.JLabel();
+        jLabelNomeLocalidade = new javax.swing.JLabel();
+        jLabelDdd = new javax.swing.JLabel();
+        jLabelNumeroTelefone = new javax.swing.JLabel();
+        jLabelTipoServico = new javax.swing.JLabel();
+        jLabelDescricaoTipoServico = new javax.swing.JLabel();
+        jLabelCaracteristicaRecurso = new javax.swing.JLabel();
+        jTextFieldControleSequencialGravacao = new javax.swing.JTextField();
+        jTextFieldTipoRegistro = new javax.swing.JTextField();
+        jTextFieldIdentificadorContaUnica = new javax.swing.JTextField();
+        jTextFieldDataVencimento = new javax.swing.JTextField();
+        jTextFieldDataEmissao = new javax.swing.JTextField();
+        jTextFieldCnlRecursoReferencia = new javax.swing.JTextField();
+        jTextFieldIdentificadorUnicoRecurso = new javax.swing.JTextField();
+        jTextFieldDdd = new javax.swing.JTextField();
+        jTextFieldNumeroTelefone = new javax.swing.JTextField();
+        jTextFieldTipoServico = new javax.swing.JTextField();
+        jTextFieldDescricaoTipoServico = new javax.swing.JTextField();
+        jTextFieldCaracteristicaRecurso = new javax.swing.JTextField();
+        jTextFieldNomeLocalidade = new javax.swing.JTextField();
+        jLabelDegrauRecurso = new javax.swing.JLabel();
+        jTextFieldDegrauRecurso = new javax.swing.JTextField();
+        jLabelVelocidadeRecurso = new javax.swing.JLabel();
+        jTextFieldVelocidadeRecurso = new javax.swing.JTextField();
+        jPanel3 = new javax.swing.JPanel();
+        jLabelTitle1 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(204, 204, 204));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
 
-        jLabelNumTelefone.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
-        jLabelNumTelefone.setForeground(new java.awt.Color(51, 153, 255));
-        jLabelNumTelefone.setText("...");
+        jLabelTitle.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        jLabelTitle.setForeground(new java.awt.Color(51, 51, 51));
+        jLabelTitle.setText("RESUMO");
+
+        jLabelTipoRegistro.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabelTipoRegistro.setForeground(new java.awt.Color(51, 51, 51));
+        jLabelTipoRegistro.setText("Tipo de Registro:");
+
+        jLabelControleSequencialGravacao.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabelControleSequencialGravacao.setForeground(new java.awt.Color(51, 51, 51));
+        jLabelControleSequencialGravacao.setText("Controle Sequencial de Gravação:");
+
+        jLabelIdentificadorContaUnica.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabelIdentificadorContaUnica.setForeground(new java.awt.Color(51, 51, 51));
+        jLabelIdentificadorContaUnica.setText("Identificador Conta Única:");
+
+        jLabelDataVencimento.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabelDataVencimento.setForeground(new java.awt.Color(51, 51, 51));
+        jLabelDataVencimento.setText("Data de Vencimento:");
+
+        jLabelDataEmissao.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabelDataEmissao.setForeground(new java.awt.Color(51, 51, 51));
+        jLabelDataEmissao.setText("Data de Emissão:");
+
+        jLabelIdentificadorUnicoRecurso.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabelIdentificadorUnicoRecurso.setForeground(new java.awt.Color(51, 51, 51));
+        jLabelIdentificadorUnicoRecurso.setText("Identificador Único do Recurso (NRC)");
+
+        jLabelCnlRecursoReferencia.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabelCnlRecursoReferencia.setForeground(new java.awt.Color(51, 51, 51));
+        jLabelCnlRecursoReferencia.setText("CNL do Recurso em Referência:");
+
+        jLabelNomeLocalidade.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabelNomeLocalidade.setForeground(new java.awt.Color(51, 51, 51));
+        jLabelNomeLocalidade.setText("Nome da Localidade:");
+
+        jLabelDdd.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabelDdd.setForeground(new java.awt.Color(51, 51, 51));
+        jLabelDdd.setText("DDD:");
+
+        jLabelNumeroTelefone.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabelNumeroTelefone.setForeground(new java.awt.Color(51, 51, 51));
+        jLabelNumeroTelefone.setText("Nº do Telefone:");
+
+        jLabelTipoServico.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabelTipoServico.setForeground(new java.awt.Color(51, 51, 51));
+        jLabelTipoServico.setText("Tipo de Serviço:");
+
+        jLabelDescricaoTipoServico.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabelDescricaoTipoServico.setForeground(new java.awt.Color(51, 51, 51));
+        jLabelDescricaoTipoServico.setText("Descrição do Tipo de Serviço (Telefone): ");
+
+        jLabelCaracteristicaRecurso.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabelCaracteristicaRecurso.setForeground(new java.awt.Color(51, 51, 51));
+        jLabelCaracteristicaRecurso.setText("Característica do Recurso:");
+
+        jTextFieldControleSequencialGravacao.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldControleSequencialGravacao.setForeground(new java.awt.Color(51, 51, 51));
+        jTextFieldControleSequencialGravacao.setEnabled(false);
+        jTextFieldControleSequencialGravacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldControleSequencialGravacaoActionPerformed(evt);
+            }
+        });
+
+        jTextFieldTipoRegistro.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldTipoRegistro.setForeground(new java.awt.Color(51, 51, 51));
+        jTextFieldTipoRegistro.setEnabled(false);
+        jTextFieldTipoRegistro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldTipoRegistroActionPerformed(evt);
+            }
+        });
+
+        jTextFieldIdentificadorContaUnica.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldIdentificadorContaUnica.setForeground(new java.awt.Color(51, 51, 51));
+        jTextFieldIdentificadorContaUnica.setEnabled(false);
+        jTextFieldIdentificadorContaUnica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldIdentificadorContaUnicaActionPerformed(evt);
+            }
+        });
+
+        jTextFieldDataVencimento.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldDataVencimento.setForeground(new java.awt.Color(51, 51, 51));
+        jTextFieldDataVencimento.setEnabled(false);
+        jTextFieldDataVencimento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldDataVencimentoActionPerformed(evt);
+            }
+        });
+
+        jTextFieldDataEmissao.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldDataEmissao.setForeground(new java.awt.Color(51, 51, 51));
+        jTextFieldDataEmissao.setEnabled(false);
+        jTextFieldDataEmissao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldDataEmissaoActionPerformed(evt);
+            }
+        });
+
+        jTextFieldCnlRecursoReferencia.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldCnlRecursoReferencia.setForeground(new java.awt.Color(51, 51, 51));
+        jTextFieldCnlRecursoReferencia.setEnabled(false);
+        jTextFieldCnlRecursoReferencia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldCnlRecursoReferenciaActionPerformed(evt);
+            }
+        });
+
+        jTextFieldIdentificadorUnicoRecurso.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldIdentificadorUnicoRecurso.setForeground(new java.awt.Color(51, 51, 51));
+        jTextFieldIdentificadorUnicoRecurso.setEnabled(false);
+        jTextFieldIdentificadorUnicoRecurso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldIdentificadorUnicoRecursoActionPerformed(evt);
+            }
+        });
+
+        jTextFieldDdd.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldDdd.setForeground(new java.awt.Color(51, 51, 51));
+        jTextFieldDdd.setEnabled(false);
+        jTextFieldDdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldDddActionPerformed(evt);
+            }
+        });
+
+        jTextFieldNumeroTelefone.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldNumeroTelefone.setForeground(new java.awt.Color(51, 51, 51));
+        jTextFieldNumeroTelefone.setEnabled(false);
+        jTextFieldNumeroTelefone.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldNumeroTelefoneActionPerformed(evt);
+            }
+        });
+
+        jTextFieldTipoServico.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldTipoServico.setForeground(new java.awt.Color(51, 51, 51));
+        jTextFieldTipoServico.setEnabled(false);
+        jTextFieldTipoServico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldTipoServicoActionPerformed(evt);
+            }
+        });
+
+        jTextFieldDescricaoTipoServico.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldDescricaoTipoServico.setForeground(new java.awt.Color(51, 51, 51));
+        jTextFieldDescricaoTipoServico.setEnabled(false);
+        jTextFieldDescricaoTipoServico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldDescricaoTipoServicoActionPerformed(evt);
+            }
+        });
+
+        jTextFieldCaracteristicaRecurso.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldCaracteristicaRecurso.setForeground(new java.awt.Color(51, 51, 51));
+        jTextFieldCaracteristicaRecurso.setEnabled(false);
+        jTextFieldCaracteristicaRecurso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldCaracteristicaRecursoActionPerformed(evt);
+            }
+        });
+
+        jTextFieldNomeLocalidade.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldNomeLocalidade.setForeground(new java.awt.Color(51, 51, 51));
+        jTextFieldNomeLocalidade.setEnabled(false);
+        jTextFieldNomeLocalidade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldNomeLocalidadeActionPerformed(evt);
+            }
+        });
+
+        jLabelDegrauRecurso.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabelDegrauRecurso.setForeground(new java.awt.Color(51, 51, 51));
+        jLabelDegrauRecurso.setText("Degrau do Recurso:");
+
+        jTextFieldDegrauRecurso.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldDegrauRecurso.setForeground(new java.awt.Color(51, 51, 51));
+        jTextFieldDegrauRecurso.setEnabled(false);
+        jTextFieldDegrauRecurso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldDegrauRecursoActionPerformed(evt);
+            }
+        });
+
+        jLabelVelocidadeRecurso.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabelVelocidadeRecurso.setForeground(new java.awt.Color(51, 51, 51));
+        jLabelVelocidadeRecurso.setText("Velocidade do Recurso:");
+
+        jTextFieldVelocidadeRecurso.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldVelocidadeRecurso.setForeground(new java.awt.Color(51, 51, 51));
+        jTextFieldVelocidadeRecurso.setEnabled(false);
+        jTextFieldVelocidadeRecurso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldVelocidadeRecursoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -52,30 +280,165 @@ public class ResumoV2Detail extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabelNumTelefone)
-                .addContainerGap(833, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator1)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelIdentificadorUnicoRecurso)
+                            .addComponent(jTextFieldIdentificadorUnicoRecurso, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(497, 992, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelTitle)
+                            .addComponent(jLabelNomeLocalidade)
+                            .addComponent(jTextFieldNomeLocalidade, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelDdd)
+                            .addComponent(jTextFieldDdd, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabelTipoRegistro)
+                                    .addComponent(jTextFieldTipoRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldCnlRecursoReferencia, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabelCnlRecursoReferencia)
+                                    .addComponent(jLabelControleSequencialGravacao)
+                                    .addComponent(jTextFieldControleSequencialGravacao, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabelIdentificadorContaUnica)
+                                    .addComponent(jTextFieldIdentificadorContaUnica, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabelDataVencimento)
+                                    .addComponent(jTextFieldDataVencimento, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabelDataEmissao)
+                                    .addComponent(jTextFieldDataEmissao, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(131, 131, 131)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextFieldDegrauRecurso, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabelDegrauRecurso)
+                                    .addComponent(jTextFieldCaracteristicaRecurso, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabelCaracteristicaRecurso)
+                                    .addComponent(jTextFieldDescricaoTipoServico, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabelDescricaoTipoServico)
+                                    .addComponent(jTextFieldTipoServico, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabelTipoServico, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldNumeroTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabelNumeroTelefone)
+                                    .addComponent(jLabelVelocidadeRecurso)
+                                    .addComponent(jTextFieldVelocidadeRecurso, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabelNumTelefone)
-                .addContainerGap(431, Short.MAX_VALUE))
+                .addComponent(jLabelTitle)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelTipoRegistro)
+                    .addComponent(jLabelNumeroTelefone))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldTipoRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldNumeroTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelControleSequencialGravacao)
+                    .addComponent(jLabelTipoServico))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldControleSequencialGravacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldTipoServico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelIdentificadorContaUnica)
+                    .addComponent(jLabelDescricaoTipoServico))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldIdentificadorContaUnica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldDescricaoTipoServico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelDataVencimento)
+                    .addComponent(jLabelCaracteristicaRecurso))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldDataVencimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldCaracteristicaRecurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelDataEmissao)
+                    .addComponent(jLabelDegrauRecurso))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldDataEmissao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldDegrauRecurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelIdentificadorUnicoRecurso)
+                    .addComponent(jLabelVelocidadeRecurso))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldIdentificadorUnicoRecurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldVelocidadeRecurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabelCnlRecursoReferencia)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextFieldCnlRecursoReferencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabelNomeLocalidade)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextFieldNomeLocalidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabelDdd)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextFieldDdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(27, Short.MAX_VALUE))
+        );
+
+        jPanel3.setBackground(new java.awt.Color(0, 102, 153));
+
+        jLabelTitle1.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        jLabelTitle1.setForeground(new java.awt.Color(0, 153, 255));
+        jLabelTitle1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/tst/leitorfebrabam/image/layout_set_logo.png"))); // NOI18N
+
+        jLabel1.setFont(new java.awt.Font("Cambria", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel1.setText("Leitor Febrabam V1");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelTitle1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(jLabelTitle1)
+                .addGap(0, 12, Short.MAX_VALUE))
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -83,13 +446,107 @@ public class ResumoV2Detail extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jTextFieldControleSequencialGravacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldControleSequencialGravacaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldControleSequencialGravacaoActionPerformed
+
+    private void jTextFieldTipoRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldTipoRegistroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldTipoRegistroActionPerformed
+
+    private void jTextFieldIdentificadorContaUnicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIdentificadorContaUnicaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldIdentificadorContaUnicaActionPerformed
+
+    private void jTextFieldDataVencimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDataVencimentoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldDataVencimentoActionPerformed
+
+    private void jTextFieldDataEmissaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDataEmissaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldDataEmissaoActionPerformed
+
+    private void jTextFieldCnlRecursoReferenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCnlRecursoReferenciaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldCnlRecursoReferenciaActionPerformed
+
+    private void jTextFieldIdentificadorUnicoRecursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIdentificadorUnicoRecursoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldIdentificadorUnicoRecursoActionPerformed
+
+    private void jTextFieldDddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDddActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldDddActionPerformed
+
+    private void jTextFieldNumeroTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNumeroTelefoneActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldNumeroTelefoneActionPerformed
+
+    private void jTextFieldTipoServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldTipoServicoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldTipoServicoActionPerformed
+
+    private void jTextFieldDescricaoTipoServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDescricaoTipoServicoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldDescricaoTipoServicoActionPerformed
+
+    private void jTextFieldCaracteristicaRecursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCaracteristicaRecursoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldCaracteristicaRecursoActionPerformed
+
+    private void jTextFieldNomeLocalidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeLocalidadeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldNomeLocalidadeActionPerformed
+
+    private void jTextFieldDegrauRecursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDegrauRecursoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldDegrauRecursoActionPerformed
+
+    private void jTextFieldVelocidadeRecursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldVelocidadeRecursoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldVelocidadeRecursoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabelNumTelefone;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabelCaracteristicaRecurso;
+    private javax.swing.JLabel jLabelCnlRecursoReferencia;
+    private javax.swing.JLabel jLabelControleSequencialGravacao;
+    private javax.swing.JLabel jLabelDataEmissao;
+    private javax.swing.JLabel jLabelDataVencimento;
+    private javax.swing.JLabel jLabelDdd;
+    private javax.swing.JLabel jLabelDegrauRecurso;
+    private javax.swing.JLabel jLabelDescricaoTipoServico;
+    private javax.swing.JLabel jLabelIdentificadorContaUnica;
+    private javax.swing.JLabel jLabelIdentificadorUnicoRecurso;
+    private javax.swing.JLabel jLabelNomeLocalidade;
+    private javax.swing.JLabel jLabelNumeroTelefone;
+    private javax.swing.JLabel jLabelTipoRegistro;
+    private javax.swing.JLabel jLabelTipoServico;
+    private javax.swing.JLabel jLabelTitle;
+    private javax.swing.JLabel jLabelTitle1;
+    private javax.swing.JLabel jLabelVelocidadeRecurso;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTextField jTextFieldCaracteristicaRecurso;
+    private javax.swing.JTextField jTextFieldCnlRecursoReferencia;
+    private javax.swing.JTextField jTextFieldControleSequencialGravacao;
+    private javax.swing.JTextField jTextFieldDataEmissao;
+    private javax.swing.JTextField jTextFieldDataVencimento;
+    private javax.swing.JTextField jTextFieldDdd;
+    private javax.swing.JTextField jTextFieldDegrauRecurso;
+    private javax.swing.JTextField jTextFieldDescricaoTipoServico;
+    private javax.swing.JTextField jTextFieldIdentificadorContaUnica;
+    private javax.swing.JTextField jTextFieldIdentificadorUnicoRecurso;
+    private javax.swing.JTextField jTextFieldNomeLocalidade;
+    private javax.swing.JTextField jTextFieldNumeroTelefone;
+    private javax.swing.JTextField jTextFieldTipoRegistro;
+    private javax.swing.JTextField jTextFieldTipoServico;
+    private javax.swing.JTextField jTextFieldVelocidadeRecurso;
     // End of variables declaration//GEN-END:variables
 
     private void loadData() {
-        jLabelNumTelefone.setText(resumoV2.getNumTelefone());
+//        jLabelNumTelefone.setText(resumoV2.getNumTelefone());
     }
 }
