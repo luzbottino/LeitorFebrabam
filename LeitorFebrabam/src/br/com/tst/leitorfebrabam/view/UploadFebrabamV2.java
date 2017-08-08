@@ -44,11 +44,11 @@ public class UploadFebrabamV2 extends javax.swing.JFrame {
     private void initComponents() {
 
         jFileChooserFebrabam = new javax.swing.JFileChooser();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabelTitle1 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
+        jPanelGray = new javax.swing.JPanel();
+        jPanelBanner = new javax.swing.JPanel();
+        jLabelLogo = new javax.swing.JLabel();
+        jLabelTitle = new javax.swing.JLabel();
+        jPanelWhite = new javax.swing.JPanel();
         jTextFieldFebramPath = new javax.swing.JTextField();
         jButtonOpen = new javax.swing.JButton();
         jButtonShow = new javax.swing.JButton();
@@ -58,38 +58,38 @@ public class UploadFebrabamV2 extends javax.swing.JFrame {
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanelGray.setBackground(new java.awt.Color(204, 204, 204));
 
-        jPanel3.setBackground(new java.awt.Color(0, 102, 153));
+        jPanelBanner.setBackground(new java.awt.Color(0, 102, 153));
 
-        jLabelTitle1.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
-        jLabelTitle1.setForeground(new java.awt.Color(0, 153, 255));
-        jLabelTitle1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/tst/leitorfebrabam/image/layout_set_logo.png"))); // NOI18N
+        jLabelLogo.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        jLabelLogo.setForeground(new java.awt.Color(0, 153, 255));
+        jLabelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/tst/leitorfebrabam/image/layout_set_logo.png"))); // NOI18N
 
-        jLabel1.setFont(new java.awt.Font("Cambria", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel1.setText("Leitor Febrabam V1");
+        jLabelTitle.setFont(new java.awt.Font("Cambria", 0, 18)); // NOI18N
+        jLabelTitle.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelTitle.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabelTitle.setText("Leitor Febrabam V1");
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanelBannerLayout = new javax.swing.GroupLayout(jPanelBanner);
+        jPanelBanner.setLayout(jPanelBannerLayout);
+        jPanelBannerLayout.setHorizontalGroup(
+            jPanelBannerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelBannerLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabelTitle1)
+                .addComponent(jLabelLogo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabelTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jLabelTitle1)
+        jPanelBannerLayout.setVerticalGroup(
+            jPanelBannerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelBannerLayout.createSequentialGroup()
+                .addComponent(jLabelLogo)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabelTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelWhite.setBackground(new java.awt.Color(255, 255, 255));
 
         jTextFieldFebramPath.setEditable(false);
         jTextFieldFebramPath.setBackground(new java.awt.Color(255, 255, 255));
@@ -115,61 +115,61 @@ public class UploadFebrabamV2 extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanelWhiteLayout = new javax.swing.GroupLayout(jPanelWhite);
+        jPanelWhite.setLayout(jPanelWhiteLayout);
+        jPanelWhiteLayout.setHorizontalGroup(
+            jPanelWhiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelWhiteLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jButtonOpen, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jTextFieldFebramPath)
                 .addContainerGap())
-            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+            .addGroup(jPanelWhiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelWhiteLayout.createSequentialGroup()
                     .addContainerGap(431, Short.MAX_VALUE)
                     .addComponent(jButtonShow, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap()))
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+        jPanelWhiteLayout.setVerticalGroup(
+            jPanelWhiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelWhiteLayout.createSequentialGroup()
                 .addGap(58, 58, 58)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanelWhiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldFebramPath, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonOpen))
                 .addContainerGap(68, Short.MAX_VALUE))
-            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+            .addGroup(jPanelWhiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelWhiteLayout.createSequentialGroup()
                     .addContainerGap(154, Short.MAX_VALUE)
                     .addComponent(jButtonShow)
                     .addGap(9, 9, 9)))
         );
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        javax.swing.GroupLayout jPanelGrayLayout = new javax.swing.GroupLayout(jPanelGray);
+        jPanelGray.setLayout(jPanelGrayLayout);
+        jPanelGrayLayout.setHorizontalGroup(
+            jPanelGrayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanelBanner, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanelWhite, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        jPanelGrayLayout.setVerticalGroup(
+            jPanelGrayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelGrayLayout.createSequentialGroup()
+                .addComponent(jPanelBanner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanelWhite, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanelGray, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanelGray, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -250,11 +250,11 @@ public class UploadFebrabamV2 extends javax.swing.JFrame {
     private javax.swing.JButton jButtonOpen;
     private javax.swing.JButton jButtonShow;
     private javax.swing.JFileChooser jFileChooserFebrabam;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabelTitle1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
+    private javax.swing.JLabel jLabelLogo;
+    private javax.swing.JLabel jLabelTitle;
+    private javax.swing.JPanel jPanelBanner;
+    private javax.swing.JPanel jPanelGray;
+    private javax.swing.JPanel jPanelWhite;
     private javax.swing.JTextField jTextFieldFebramPath;
     // End of variables declaration//GEN-END:variables
 

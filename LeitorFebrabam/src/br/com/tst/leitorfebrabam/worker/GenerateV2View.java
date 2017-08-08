@@ -72,8 +72,8 @@ public class GenerateV2View extends SwingWorker<V2, V2> {
     private HeaderV2 buildHeader(String line) {
         HeaderV2 headerV2 = new HeaderV2();
         
-        headerV2.setTipoRegistro(line.substring(0, 2));
-        headerV2.setControleSeguencialGravacao(Integer.valueOf(line.substring(2, 13)));
+        headerV2.setTipoRegistro(line.substring(0, 1));
+        headerV2.setControleSeguencialGravacao(Integer.valueOf(line.substring(1, 13)));
         headerV2.setDtaGeracaoArquivo(formatDate(line.substring(13, 21)));
         headerV2.setOperadora(removeWhiteSpacesInTheEnd(line.substring(21, 36)));
         headerV2.setUfOperadora(line.substring(36, 38));
@@ -91,10 +91,13 @@ public class GenerateV2View extends SwingWorker<V2, V2> {
     private ResumoV2 buildResumo(String line) {
         ResumoV2 resumoV2 = new ResumoV2();        
         
-        resumoV2.setTipoRegistro(line.substring(0, 2));
-        resumoV2.setControleSequencialGravacao(Integer.valueOf(line.substring(2, 13)));
+        resumoV2.setTipoRegistro(line.substring(0, 1));
+        resumoV2.setControleSequencialGravacao(Integer.valueOf(line.substring(1, 13)));
+        resumoV2.setIdentificadorContaUnica(removeWhiteSpacesInTheEnd(line.substring(13, 38)));
+        resumoV2.setDtaVencimento(formatDate(line.substring(38, 46)));
+        resumoV2.setDtaEmissao(formatDate(line.substring(46, 54)));
         resumoV2.setIdentificadorUnicoRecurso(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(54, 79))));
-        resumoV2.setClnRecursoReferencia(Integer.valueOf(line.substring(79, 84)));
+        resumoV2.setCnlRecursoReferencia(Integer.valueOf(line.substring(79, 84)));
         resumoV2.setNomeLocalidade(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(84, 109))));
         resumoV2.setDdd(verifyWhiteSpaces(line.substring(109, 111)));
         resumoV2.setNumTelefone(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(111, 121))));

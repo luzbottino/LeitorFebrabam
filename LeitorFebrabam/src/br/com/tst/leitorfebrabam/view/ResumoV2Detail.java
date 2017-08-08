@@ -6,6 +6,7 @@
 package br.com.tst.leitorfebrabam.view;
 
 import br.com.tst.leitorfebrabam.model.ResumoV2;
+import javax.swing.JFrame;
 
 /**
  *
@@ -14,15 +15,18 @@ import br.com.tst.leitorfebrabam.model.ResumoV2;
 public class ResumoV2Detail extends javax.swing.JFrame {
 
     private ResumoV2 resumoV2;
+
     /**
      * Creates new form ResumoV2
      */
     public ResumoV2Detail(ResumoV2 resumoV2) {
         initComponents();
         this.resumoV2 = resumoV2;
-        loadData();
-    }
 
+        maximizeFrame();
+        loadData();
+
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -32,10 +36,12 @@ public class ResumoV2Detail extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel1 = new javax.swing.JPanel();
         jLabelTitle = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
+        jPanel2 = new javax.swing.JPanel();
         jLabelTipoRegistro = new javax.swing.JLabel();
         jLabelControleSequencialGravacao = new javax.swing.JLabel();
         jLabelIdentificadorContaUnica = new javax.swing.JLabel();
@@ -48,7 +54,6 @@ public class ResumoV2Detail extends javax.swing.JFrame {
         jLabelNumeroTelefone = new javax.swing.JLabel();
         jLabelTipoServico = new javax.swing.JLabel();
         jLabelDescricaoTipoServico = new javax.swing.JLabel();
-        jLabelCaracteristicaRecurso = new javax.swing.JLabel();
         jTextFieldControleSequencialGravacao = new javax.swing.JTextField();
         jTextFieldTipoRegistro = new javax.swing.JTextField();
         jTextFieldIdentificadorContaUnica = new javax.swing.JTextField();
@@ -60,12 +65,51 @@ public class ResumoV2Detail extends javax.swing.JFrame {
         jTextFieldNumeroTelefone = new javax.swing.JTextField();
         jTextFieldTipoServico = new javax.swing.JTextField();
         jTextFieldDescricaoTipoServico = new javax.swing.JTextField();
-        jTextFieldCaracteristicaRecurso = new javax.swing.JTextField();
+        jTextFieldUnidadeVelocidadeRecurso = new javax.swing.JTextField();
         jTextFieldNomeLocalidade = new javax.swing.JTextField();
         jLabelDegrauRecurso = new javax.swing.JLabel();
-        jTextFieldDegrauRecurso = new javax.swing.JTextField();
+        jTextFieldInicioPeriodoAssinatura = new javax.swing.JTextField();
         jLabelVelocidadeRecurso = new javax.swing.JLabel();
-        jTextFieldVelocidadeRecurso = new javax.swing.JTextField();
+        jTextFieldlFimPeriodoAssinatura = new javax.swing.JTextField();
+        jLabelUnidadeVelocidadeRecurso = new javax.swing.JLabel();
+        jLabelInicioPeriodoAssinatura = new javax.swing.JLabel();
+        jLabelFimPeriodoAssinatura = new javax.swing.JLabel();
+        jLabelCaracteristicaRecurso1 = new javax.swing.JLabel();
+        jTextFieldCaracteristicaRecurso1 = new javax.swing.JTextField();
+        jTextFieldDegrauRecurso1 = new javax.swing.JTextField();
+        jTextFieldVelocidadeRecurso1 = new javax.swing.JTextField();
+        jLabelInicioPeriodoServicoMedido = new javax.swing.JLabel();
+        jLabelFimPeriodoServicoMedido = new javax.swing.JLabel();
+        jLabelUnidadeConsumo = new javax.swing.JLabel();
+        jTextFieldInicioPeriodoServicoMedido = new javax.swing.JTextField();
+        jTextFieldFimPeriodoServicoMedido = new javax.swing.JTextField();
+        jTextFieldUnidadeConsumo = new javax.swing.JTextField();
+        jLabelQtdConsumo = new javax.swing.JLabel();
+        jLabelSinalValorConsumo = new javax.swing.JLabel();
+        jLabelValorConsumo = new javax.swing.JLabel();
+        jTextFieldQtdConsumo = new javax.swing.JTextField();
+        jTextFieldSinalValorConsumo = new javax.swing.JTextField();
+        jTextFieldValorConsumo = new javax.swing.JTextField();
+        jLabelSinalAssinatura = new javax.swing.JLabel();
+        jLabelValorAssinatura = new javax.swing.JLabel();
+        jLabelAliquota = new javax.swing.JLabel();
+        jTextFieldSinalAssinatura = new javax.swing.JTextField();
+        jTextFieldValorAssinatura = new javax.swing.JTextField();
+        jTextFieldAliquota = new javax.swing.JTextField();
+        jLabel1SinalICMS = new javax.swing.JLabel();
+        jLabelValorICMS = new javax.swing.JLabel();
+        jLabelSinalValTotalOutosImpostos = new javax.swing.JLabel();
+        jTextFieldSinalICMS = new javax.swing.JTextField();
+        jTextFieldValorICMS = new javax.swing.JTextField();
+        jTextFieldSinalValTotalOutosImpostos = new javax.swing.JTextField();
+        jLabelValTotalImposto = new javax.swing.JLabel();
+        jLabelNumNotaFiscal = new javax.swing.JLabel();
+        jLabelSinalValConta = new javax.swing.JLabel();
+        jTextFieldValTotalImposto = new javax.swing.JTextField();
+        jTextFieldNumNotaFiscal = new javax.swing.JTextField();
+        jTextFieldSinalValConta = new javax.swing.JTextField();
+        jLabelValConta = new javax.swing.JLabel();
+        jTextFieldValConta = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jLabelTitle1 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -74,326 +118,847 @@ public class ResumoV2Detail extends javax.swing.JFrame {
         setBackground(new java.awt.Color(204, 204, 204));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new java.awt.GridBagLayout());
 
         jLabelTitle.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
-        jLabelTitle.setForeground(new java.awt.Color(51, 51, 51));
+        jLabelTitle.setForeground(new java.awt.Color(0, 102, 153));
         jLabelTitle.setText("RESUMO");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.ipadx = 1;
+        gridBagConstraints.ipady = 5;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(0, 5, 0, 0);
+        jPanel1.add(jLabelTitle, gridBagConstraints);
+
+        jSeparator1.setBackground(new java.awt.Color(153, 153, 153));
+        jSeparator1.setForeground(new java.awt.Color(153, 153, 153));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.ipadx = 1200;
+        gridBagConstraints.ipady = 10;
+        gridBagConstraints.insets = new java.awt.Insets(6, 5, 0, 6);
+        jPanel1.add(jSeparator1, gridBagConstraints);
+
+        jPanel2.setBackground(new java.awt.Color(0, 102, 153));
+        jPanel2.setLayout(new java.awt.GridBagLayout());
 
         jLabelTipoRegistro.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabelTipoRegistro.setForeground(new java.awt.Color(51, 51, 51));
+        jLabelTipoRegistro.setForeground(new java.awt.Color(255, 255, 255));
         jLabelTipoRegistro.setText("Tipo de Registro:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(10, 15, 0, 0);
+        jPanel2.add(jLabelTipoRegistro, gridBagConstraints);
 
         jLabelControleSequencialGravacao.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabelControleSequencialGravacao.setForeground(new java.awt.Color(51, 51, 51));
+        jLabelControleSequencialGravacao.setForeground(new java.awt.Color(255, 255, 255));
         jLabelControleSequencialGravacao.setText("Controle Sequencial de Gravação:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(10, 15, 0, 0);
+        jPanel2.add(jLabelControleSequencialGravacao, gridBagConstraints);
 
         jLabelIdentificadorContaUnica.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabelIdentificadorContaUnica.setForeground(new java.awt.Color(51, 51, 51));
+        jLabelIdentificadorContaUnica.setForeground(new java.awt.Color(255, 255, 255));
         jLabelIdentificadorContaUnica.setText("Identificador Conta Única:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(10, 15, 0, 0);
+        jPanel2.add(jLabelIdentificadorContaUnica, gridBagConstraints);
 
         jLabelDataVencimento.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabelDataVencimento.setForeground(new java.awt.Color(51, 51, 51));
+        jLabelDataVencimento.setForeground(new java.awt.Color(255, 255, 255));
         jLabelDataVencimento.setText("Data de Vencimento:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(20, 15, 0, 0);
+        jPanel2.add(jLabelDataVencimento, gridBagConstraints);
 
         jLabelDataEmissao.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabelDataEmissao.setForeground(new java.awt.Color(51, 51, 51));
+        jLabelDataEmissao.setForeground(new java.awt.Color(255, 255, 255));
         jLabelDataEmissao.setText("Data de Emissão:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(20, 15, 0, 0);
+        jPanel2.add(jLabelDataEmissao, gridBagConstraints);
 
         jLabelIdentificadorUnicoRecurso.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabelIdentificadorUnicoRecurso.setForeground(new java.awt.Color(51, 51, 51));
+        jLabelIdentificadorUnicoRecurso.setForeground(new java.awt.Color(255, 255, 255));
         jLabelIdentificadorUnicoRecurso.setText("Identificador Único do Recurso (NRC)");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 7;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(10, 15, 0, 0);
+        jPanel2.add(jLabelIdentificadorUnicoRecurso, gridBagConstraints);
 
         jLabelCnlRecursoReferencia.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabelCnlRecursoReferencia.setForeground(new java.awt.Color(51, 51, 51));
+        jLabelCnlRecursoReferencia.setForeground(new java.awt.Color(255, 255, 255));
         jLabelCnlRecursoReferencia.setText("CNL do Recurso em Referência:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(20, 15, 0, 0);
+        jPanel2.add(jLabelCnlRecursoReferencia, gridBagConstraints);
 
         jLabelNomeLocalidade.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabelNomeLocalidade.setForeground(new java.awt.Color(51, 51, 51));
+        jLabelNomeLocalidade.setForeground(new java.awt.Color(255, 255, 255));
         jLabelNomeLocalidade.setText("Nome da Localidade:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(20, 15, 0, 0);
+        jPanel2.add(jLabelNomeLocalidade, gridBagConstraints);
 
         jLabelDdd.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabelDdd.setForeground(new java.awt.Color(51, 51, 51));
+        jLabelDdd.setForeground(new java.awt.Color(255, 255, 255));
         jLabelDdd.setText("DDD:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(20, 15, 0, 0);
+        jPanel2.add(jLabelDdd, gridBagConstraints);
 
         jLabelNumeroTelefone.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabelNumeroTelefone.setForeground(new java.awt.Color(51, 51, 51));
+        jLabelNumeroTelefone.setForeground(new java.awt.Color(255, 255, 255));
         jLabelNumeroTelefone.setText("Nº do Telefone:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(20, 15, 0, 0);
+        jPanel2.add(jLabelNumeroTelefone, gridBagConstraints);
 
         jLabelTipoServico.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabelTipoServico.setForeground(new java.awt.Color(51, 51, 51));
+        jLabelTipoServico.setForeground(new java.awt.Color(255, 255, 255));
         jLabelTipoServico.setText("Tipo de Serviço:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 7;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.ipadx = 12;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(20, 15, 0, 0);
+        jPanel2.add(jLabelTipoServico, gridBagConstraints);
 
         jLabelDescricaoTipoServico.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabelDescricaoTipoServico.setForeground(new java.awt.Color(51, 51, 51));
+        jLabelDescricaoTipoServico.setForeground(new java.awt.Color(255, 255, 255));
         jLabelDescricaoTipoServico.setText("Descrição do Tipo de Serviço (Telefone): ");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 7;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(20, 15, 0, 0);
+        jPanel2.add(jLabelDescricaoTipoServico, gridBagConstraints);
 
-        jLabelCaracteristicaRecurso.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabelCaracteristicaRecurso.setForeground(new java.awt.Color(51, 51, 51));
-        jLabelCaracteristicaRecurso.setText("Característica do Recurso:");
-
+        jTextFieldControleSequencialGravacao.setEditable(false);
         jTextFieldControleSequencialGravacao.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldControleSequencialGravacao.setForeground(new java.awt.Color(51, 51, 51));
-        jTextFieldControleSequencialGravacao.setEnabled(false);
         jTextFieldControleSequencialGravacao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldControleSequencialGravacaoActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 15, 0, 0);
+        jPanel2.add(jTextFieldControleSequencialGravacao, gridBagConstraints);
 
+        jTextFieldTipoRegistro.setEditable(false);
         jTextFieldTipoRegistro.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldTipoRegistro.setForeground(new java.awt.Color(51, 51, 51));
-        jTextFieldTipoRegistro.setEnabled(false);
         jTextFieldTipoRegistro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldTipoRegistroActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.ipadx = 36;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 15, 0, 0);
+        jPanel2.add(jTextFieldTipoRegistro, gridBagConstraints);
 
+        jTextFieldIdentificadorContaUnica.setEditable(false);
         jTextFieldIdentificadorContaUnica.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldIdentificadorContaUnica.setForeground(new java.awt.Color(51, 51, 51));
-        jTextFieldIdentificadorContaUnica.setEnabled(false);
         jTextFieldIdentificadorContaUnica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldIdentificadorContaUnicaActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 15, 0, 0);
+        jPanel2.add(jTextFieldIdentificadorContaUnica, gridBagConstraints);
 
+        jTextFieldDataVencimento.setEditable(false);
         jTextFieldDataVencimento.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldDataVencimento.setForeground(new java.awt.Color(51, 51, 51));
-        jTextFieldDataVencimento.setEnabled(false);
         jTextFieldDataVencimento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldDataVencimentoActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 15, 0, 0);
+        jPanel2.add(jTextFieldDataVencimento, gridBagConstraints);
 
+        jTextFieldDataEmissao.setEditable(false);
         jTextFieldDataEmissao.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldDataEmissao.setForeground(new java.awt.Color(51, 51, 51));
-        jTextFieldDataEmissao.setEnabled(false);
         jTextFieldDataEmissao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldDataEmissaoActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 15, 0, 0);
+        jPanel2.add(jTextFieldDataEmissao, gridBagConstraints);
 
+        jTextFieldCnlRecursoReferencia.setEditable(false);
         jTextFieldCnlRecursoReferencia.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldCnlRecursoReferencia.setForeground(new java.awt.Color(51, 51, 51));
-        jTextFieldCnlRecursoReferencia.setEnabled(false);
         jTextFieldCnlRecursoReferencia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldCnlRecursoReferenciaActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 15, 0, 0);
+        jPanel2.add(jTextFieldCnlRecursoReferencia, gridBagConstraints);
 
+        jTextFieldIdentificadorUnicoRecurso.setEditable(false);
         jTextFieldIdentificadorUnicoRecurso.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldIdentificadorUnicoRecurso.setForeground(new java.awt.Color(51, 51, 51));
-        jTextFieldIdentificadorUnicoRecurso.setEnabled(false);
         jTextFieldIdentificadorUnicoRecurso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldIdentificadorUnicoRecursoActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 7;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 15, 0, 0);
+        jPanel2.add(jTextFieldIdentificadorUnicoRecurso, gridBagConstraints);
 
+        jTextFieldDdd.setEditable(false);
         jTextFieldDdd.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldDdd.setForeground(new java.awt.Color(51, 51, 51));
-        jTextFieldDdd.setEnabled(false);
         jTextFieldDdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldDddActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 15, 0, 0);
+        jPanel2.add(jTextFieldDdd, gridBagConstraints);
 
+        jTextFieldNumeroTelefone.setEditable(false);
         jTextFieldNumeroTelefone.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldNumeroTelefone.setForeground(new java.awt.Color(51, 51, 51));
-        jTextFieldNumeroTelefone.setEnabled(false);
         jTextFieldNumeroTelefone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldNumeroTelefoneActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 15, 0, 0);
+        jPanel2.add(jTextFieldNumeroTelefone, gridBagConstraints);
 
+        jTextFieldTipoServico.setEditable(false);
         jTextFieldTipoServico.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldTipoServico.setForeground(new java.awt.Color(51, 51, 51));
-        jTextFieldTipoServico.setEnabled(false);
         jTextFieldTipoServico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldTipoServicoActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 7;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 15, 0, 0);
+        jPanel2.add(jTextFieldTipoServico, gridBagConstraints);
 
+        jTextFieldDescricaoTipoServico.setEditable(false);
         jTextFieldDescricaoTipoServico.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldDescricaoTipoServico.setForeground(new java.awt.Color(51, 51, 51));
-        jTextFieldDescricaoTipoServico.setEnabled(false);
         jTextFieldDescricaoTipoServico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldDescricaoTipoServicoActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 7;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 15, 0, 0);
+        jPanel2.add(jTextFieldDescricaoTipoServico, gridBagConstraints);
 
-        jTextFieldCaracteristicaRecurso.setBackground(new java.awt.Color(255, 255, 255));
-        jTextFieldCaracteristicaRecurso.setForeground(new java.awt.Color(51, 51, 51));
-        jTextFieldCaracteristicaRecurso.setEnabled(false);
-        jTextFieldCaracteristicaRecurso.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldUnidadeVelocidadeRecurso.setEditable(false);
+        jTextFieldUnidadeVelocidadeRecurso.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldUnidadeVelocidadeRecurso.setForeground(new java.awt.Color(51, 51, 51));
+        jTextFieldUnidadeVelocidadeRecurso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldCaracteristicaRecursoActionPerformed(evt);
+                jTextFieldUnidadeVelocidadeRecursoActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 7;
+        gridBagConstraints.gridy = 7;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 15, 0, 0);
+        jPanel2.add(jTextFieldUnidadeVelocidadeRecurso, gridBagConstraints);
 
+        jTextFieldNomeLocalidade.setEditable(false);
         jTextFieldNomeLocalidade.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldNomeLocalidade.setForeground(new java.awt.Color(51, 51, 51));
-        jTextFieldNomeLocalidade.setEnabled(false);
         jTextFieldNomeLocalidade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldNomeLocalidadeActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 15, 0, 0);
+        jPanel2.add(jTextFieldNomeLocalidade, gridBagConstraints);
 
         jLabelDegrauRecurso.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabelDegrauRecurso.setForeground(new java.awt.Color(51, 51, 51));
+        jLabelDegrauRecurso.setForeground(new java.awt.Color(255, 255, 255));
         jLabelDegrauRecurso.setText("Degrau do Recurso:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(20, 15, 0, 0);
+        jPanel2.add(jLabelDegrauRecurso, gridBagConstraints);
 
-        jTextFieldDegrauRecurso.setBackground(new java.awt.Color(255, 255, 255));
-        jTextFieldDegrauRecurso.setForeground(new java.awt.Color(51, 51, 51));
-        jTextFieldDegrauRecurso.setEnabled(false);
-        jTextFieldDegrauRecurso.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldInicioPeriodoAssinatura.setEditable(false);
+        jTextFieldInicioPeriodoAssinatura.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldInicioPeriodoAssinatura.setForeground(new java.awt.Color(51, 51, 51));
+        jTextFieldInicioPeriodoAssinatura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldDegrauRecursoActionPerformed(evt);
+                jTextFieldInicioPeriodoAssinaturaActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 9;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 15, 0, 0);
+        jPanel2.add(jTextFieldInicioPeriodoAssinatura, gridBagConstraints);
 
         jLabelVelocidadeRecurso.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabelVelocidadeRecurso.setForeground(new java.awt.Color(51, 51, 51));
+        jLabelVelocidadeRecurso.setForeground(new java.awt.Color(255, 255, 255));
         jLabelVelocidadeRecurso.setText("Velocidade do Recurso:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(20, 15, 0, 0);
+        jPanel2.add(jLabelVelocidadeRecurso, gridBagConstraints);
 
-        jTextFieldVelocidadeRecurso.setBackground(new java.awt.Color(255, 255, 255));
-        jTextFieldVelocidadeRecurso.setForeground(new java.awt.Color(51, 51, 51));
-        jTextFieldVelocidadeRecurso.setEnabled(false);
-        jTextFieldVelocidadeRecurso.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldlFimPeriodoAssinatura.setEditable(false);
+        jTextFieldlFimPeriodoAssinatura.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldlFimPeriodoAssinatura.setForeground(new java.awt.Color(51, 51, 51));
+        jTextFieldlFimPeriodoAssinatura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldVelocidadeRecursoActionPerformed(evt);
+                jTextFieldlFimPeriodoAssinaturaActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 9;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 15, 0, 0);
+        jPanel2.add(jTextFieldlFimPeriodoAssinatura, gridBagConstraints);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator1)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelIdentificadorUnicoRecurso)
-                            .addComponent(jTextFieldIdentificadorUnicoRecurso, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(497, 992, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelTitle)
-                            .addComponent(jLabelNomeLocalidade)
-                            .addComponent(jTextFieldNomeLocalidade, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelDdd)
-                            .addComponent(jTextFieldDdd, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabelTipoRegistro)
-                                    .addComponent(jTextFieldTipoRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextFieldCnlRecursoReferencia, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabelCnlRecursoReferencia)
-                                    .addComponent(jLabelControleSequencialGravacao)
-                                    .addComponent(jTextFieldControleSequencialGravacao, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabelIdentificadorContaUnica)
-                                    .addComponent(jTextFieldIdentificadorContaUnica, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabelDataVencimento)
-                                    .addComponent(jTextFieldDataVencimento, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabelDataEmissao)
-                                    .addComponent(jTextFieldDataEmissao, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(131, 131, 131)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextFieldDegrauRecurso, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabelDegrauRecurso)
-                                    .addComponent(jTextFieldCaracteristicaRecurso, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabelCaracteristicaRecurso)
-                                    .addComponent(jTextFieldDescricaoTipoServico, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabelDescricaoTipoServico)
-                                    .addComponent(jTextFieldTipoServico, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabelTipoServico, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextFieldNumeroTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabelNumeroTelefone)
-                                    .addComponent(jLabelVelocidadeRecurso)
-                                    .addComponent(jTextFieldVelocidadeRecurso, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabelTitle)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelTipoRegistro)
-                    .addComponent(jLabelNumeroTelefone))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldTipoRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldNumeroTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelControleSequencialGravacao)
-                    .addComponent(jLabelTipoServico))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldControleSequencialGravacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldTipoServico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelIdentificadorContaUnica)
-                    .addComponent(jLabelDescricaoTipoServico))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldIdentificadorContaUnica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldDescricaoTipoServico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelDataVencimento)
-                    .addComponent(jLabelCaracteristicaRecurso))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldDataVencimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldCaracteristicaRecurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelDataEmissao)
-                    .addComponent(jLabelDegrauRecurso))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldDataEmissao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldDegrauRecurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelIdentificadorUnicoRecurso)
-                    .addComponent(jLabelVelocidadeRecurso))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldIdentificadorUnicoRecurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldVelocidadeRecurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jLabelCnlRecursoReferencia)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextFieldCnlRecursoReferencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabelNomeLocalidade)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextFieldNomeLocalidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabelDdd)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextFieldDdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(27, Short.MAX_VALUE))
-        );
+        jLabelUnidadeVelocidadeRecurso.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabelUnidadeVelocidadeRecurso.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelUnidadeVelocidadeRecurso.setText("Unidade da Velocidade do Recurso:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 7;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(20, 15, 0, 0);
+        jPanel2.add(jLabelUnidadeVelocidadeRecurso, gridBagConstraints);
+
+        jLabelInicioPeriodoAssinatura.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabelInicioPeriodoAssinatura.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelInicioPeriodoAssinatura.setText("Início do período da Assinatura:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(20, 15, 0, 0);
+        jPanel2.add(jLabelInicioPeriodoAssinatura, gridBagConstraints);
+
+        jLabelFimPeriodoAssinatura.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabelFimPeriodoAssinatura.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelFimPeriodoAssinatura.setText("Fim do período da Assinatura:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(20, 15, 0, 0);
+        jPanel2.add(jLabelFimPeriodoAssinatura, gridBagConstraints);
+
+        jLabelCaracteristicaRecurso1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabelCaracteristicaRecurso1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelCaracteristicaRecurso1.setText("Característica do Recurso:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(20, 15, 0, 0);
+        jPanel2.add(jLabelCaracteristicaRecurso1, gridBagConstraints);
+
+        jTextFieldCaracteristicaRecurso1.setEditable(false);
+        jTextFieldCaracteristicaRecurso1.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldCaracteristicaRecurso1.setForeground(new java.awt.Color(51, 51, 51));
+        jTextFieldCaracteristicaRecurso1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldCaracteristicaRecurso1ActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 7;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 15, 0, 0);
+        jPanel2.add(jTextFieldCaracteristicaRecurso1, gridBagConstraints);
+
+        jTextFieldDegrauRecurso1.setEditable(false);
+        jTextFieldDegrauRecurso1.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldDegrauRecurso1.setForeground(new java.awt.Color(51, 51, 51));
+        jTextFieldDegrauRecurso1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldDegrauRecurso1ActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 7;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 15, 0, 0);
+        jPanel2.add(jTextFieldDegrauRecurso1, gridBagConstraints);
+
+        jTextFieldVelocidadeRecurso1.setEditable(false);
+        jTextFieldVelocidadeRecurso1.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldVelocidadeRecurso1.setForeground(new java.awt.Color(51, 51, 51));
+        jTextFieldVelocidadeRecurso1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldVelocidadeRecurso1ActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 7;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 15, 0, 0);
+        jPanel2.add(jTextFieldVelocidadeRecurso1, gridBagConstraints);
+
+        jLabelInicioPeriodoServicoMedido.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabelInicioPeriodoServicoMedido.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelInicioPeriodoServicoMedido.setText("Início do do  período do Serviço Medido:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(20, 15, 0, 0);
+        jPanel2.add(jLabelInicioPeriodoServicoMedido, gridBagConstraints);
+
+        jLabelFimPeriodoServicoMedido.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabelFimPeriodoServicoMedido.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelFimPeriodoServicoMedido.setText("Fim do  período do Serviço Medido:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 7;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(20, 15, 0, 0);
+        jPanel2.add(jLabelFimPeriodoServicoMedido, gridBagConstraints);
+
+        jLabelUnidadeConsumo.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabelUnidadeConsumo.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelUnidadeConsumo.setText("Unidade de Consumo:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(20, 15, 0, 0);
+        jPanel2.add(jLabelUnidadeConsumo, gridBagConstraints);
+
+        jTextFieldInicioPeriodoServicoMedido.setEditable(false);
+        jTextFieldInicioPeriodoServicoMedido.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldInicioPeriodoServicoMedido.setForeground(new java.awt.Color(51, 51, 51));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 9;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 15, 0, 0);
+        jPanel2.add(jTextFieldInicioPeriodoServicoMedido, gridBagConstraints);
+
+        jTextFieldFimPeriodoServicoMedido.setEditable(false);
+        jTextFieldFimPeriodoServicoMedido.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldFimPeriodoServicoMedido.setForeground(new java.awt.Color(51, 51, 51));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 7;
+        gridBagConstraints.gridy = 9;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 15, 0, 0);
+        jPanel2.add(jTextFieldFimPeriodoServicoMedido, gridBagConstraints);
+
+        jTextFieldUnidadeConsumo.setEditable(false);
+        jTextFieldUnidadeConsumo.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldUnidadeConsumo.setForeground(new java.awt.Color(51, 51, 51));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 11;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 15, 0, 0);
+        jPanel2.add(jTextFieldUnidadeConsumo, gridBagConstraints);
+
+        jLabelQtdConsumo.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabelQtdConsumo.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelQtdConsumo.setText("Qtd de Consumo (Pulsos):");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(20, 15, 0, 0);
+        jPanel2.add(jLabelQtdConsumo, gridBagConstraints);
+
+        jLabelSinalValorConsumo.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabelSinalValorConsumo.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelSinalValorConsumo.setText("Sinal Valor Consumo:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(20, 15, 0, 0);
+        jPanel2.add(jLabelSinalValorConsumo, gridBagConstraints);
+
+        jLabelValorConsumo.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabelValorConsumo.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelValorConsumo.setText("Valor Consumo:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 7;
+        gridBagConstraints.gridy = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(20, 15, 0, 0);
+        jPanel2.add(jLabelValorConsumo, gridBagConstraints);
+
+        jTextFieldQtdConsumo.setEditable(false);
+        jTextFieldQtdConsumo.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldQtdConsumo.setForeground(new java.awt.Color(51, 51, 51));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 11;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 15, 0, 0);
+        jPanel2.add(jTextFieldQtdConsumo, gridBagConstraints);
+
+        jTextFieldSinalValorConsumo.setEditable(false);
+        jTextFieldSinalValorConsumo.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldSinalValorConsumo.setForeground(new java.awt.Color(51, 51, 51));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 11;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 15, 0, 0);
+        jPanel2.add(jTextFieldSinalValorConsumo, gridBagConstraints);
+
+        jTextFieldValorConsumo.setEditable(false);
+        jTextFieldValorConsumo.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldValorConsumo.setForeground(new java.awt.Color(51, 51, 51));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 7;
+        gridBagConstraints.gridy = 11;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 15, 0, 0);
+        jPanel2.add(jTextFieldValorConsumo, gridBagConstraints);
+
+        jLabelSinalAssinatura.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabelSinalAssinatura.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelSinalAssinatura.setText("Sinal Assinatura:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 12;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(20, 15, 0, 0);
+        jPanel2.add(jLabelSinalAssinatura, gridBagConstraints);
+
+        jLabelValorAssinatura.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabelValorAssinatura.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelValorAssinatura.setText("Valor Assinatura:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 12;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(20, 15, 0, 0);
+        jPanel2.add(jLabelValorAssinatura, gridBagConstraints);
+
+        jLabelAliquota.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabelAliquota.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelAliquota.setText("Alíquota (Percentual):");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 12;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(20, 15, 0, 0);
+        jPanel2.add(jLabelAliquota, gridBagConstraints);
+
+        jTextFieldSinalAssinatura.setEditable(false);
+        jTextFieldSinalAssinatura.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldSinalAssinatura.setForeground(new java.awt.Color(51, 51, 51));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 13;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 15, 0, 0);
+        jPanel2.add(jTextFieldSinalAssinatura, gridBagConstraints);
+
+        jTextFieldValorAssinatura.setEditable(false);
+        jTextFieldValorAssinatura.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldValorAssinatura.setForeground(new java.awt.Color(51, 51, 51));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 13;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 15, 0, 0);
+        jPanel2.add(jTextFieldValorAssinatura, gridBagConstraints);
+
+        jTextFieldAliquota.setEditable(false);
+        jTextFieldAliquota.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldAliquota.setForeground(new java.awt.Color(51, 51, 51));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 13;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 15, 0, 0);
+        jPanel2.add(jTextFieldAliquota, gridBagConstraints);
+
+        jLabel1SinalICMS.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabel1SinalICMS.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1SinalICMS.setText("Sinal ICMS:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 7;
+        gridBagConstraints.gridy = 12;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(20, 15, 0, 0);
+        jPanel2.add(jLabel1SinalICMS, gridBagConstraints);
+
+        jLabelValorICMS.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabelValorICMS.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelValorICMS.setText("Valor ICMS:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 14;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(20, 15, 0, 0);
+        jPanel2.add(jLabelValorICMS, gridBagConstraints);
+
+        jLabelSinalValTotalOutosImpostos.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabelSinalValTotalOutosImpostos.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelSinalValTotalOutosImpostos.setText("Sinal Valor Total de outros Impostos:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 14;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(20, 15, 0, 0);
+        jPanel2.add(jLabelSinalValTotalOutosImpostos, gridBagConstraints);
+
+        jTextFieldSinalICMS.setEditable(false);
+        jTextFieldSinalICMS.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldSinalICMS.setForeground(new java.awt.Color(51, 51, 51));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 7;
+        gridBagConstraints.gridy = 13;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 15, 0, 0);
+        jPanel2.add(jTextFieldSinalICMS, gridBagConstraints);
+
+        jTextFieldValorICMS.setEditable(false);
+        jTextFieldValorICMS.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldValorICMS.setForeground(new java.awt.Color(51, 51, 51));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 15;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 15, 0, 0);
+        jPanel2.add(jTextFieldValorICMS, gridBagConstraints);
+
+        jTextFieldSinalValTotalOutosImpostos.setEditable(false);
+        jTextFieldSinalValTotalOutosImpostos.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldSinalValTotalOutosImpostos.setForeground(new java.awt.Color(51, 51, 51));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 15;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 15, 0, 0);
+        jPanel2.add(jTextFieldSinalValTotalOutosImpostos, gridBagConstraints);
+
+        jLabelValTotalImposto.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabelValTotalImposto.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelValTotalImposto.setText("Valor Total de Impostos:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 14;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(20, 15, 0, 0);
+        jPanel2.add(jLabelValTotalImposto, gridBagConstraints);
+
+        jLabelNumNotaFiscal.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabelNumNotaFiscal.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelNumNotaFiscal.setText("Nº da Nota Fiscal");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 7;
+        gridBagConstraints.gridy = 14;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(20, 15, 0, 0);
+        jPanel2.add(jLabelNumNotaFiscal, gridBagConstraints);
+
+        jLabelSinalValConta.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabelSinalValConta.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelSinalValConta.setText("Sinal Valor da Conta:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 16;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(20, 15, 0, 0);
+        jPanel2.add(jLabelSinalValConta, gridBagConstraints);
+
+        jTextFieldValTotalImposto.setEditable(false);
+        jTextFieldValTotalImposto.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldValTotalImposto.setForeground(new java.awt.Color(51, 51, 51));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 15;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 15, 0, 0);
+        jPanel2.add(jTextFieldValTotalImposto, gridBagConstraints);
+
+        jTextFieldNumNotaFiscal.setEditable(false);
+        jTextFieldNumNotaFiscal.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldNumNotaFiscal.setForeground(new java.awt.Color(51, 51, 51));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 7;
+        gridBagConstraints.gridy = 15;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 15, 0, 0);
+        jPanel2.add(jTextFieldNumNotaFiscal, gridBagConstraints);
+
+        jTextFieldSinalValConta.setEditable(false);
+        jTextFieldSinalValConta.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldSinalValConta.setForeground(new java.awt.Color(51, 51, 51));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 17;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 15, 100, 0);
+        jPanel2.add(jTextFieldSinalValConta, gridBagConstraints);
+
+        jLabelValConta.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabelValConta.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelValConta.setText("Valor da Conta:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 16;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(20, 15, 0, 0);
+        jPanel2.add(jLabelValConta, gridBagConstraints);
+
+        jTextFieldValConta.setEditable(false);
+        jTextFieldValConta.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldValConta.setForeground(new java.awt.Color(51, 51, 51));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 17;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 15, 100, 0);
+        jPanel2.add(jTextFieldValConta, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.ipadx = 11;
+        gridBagConstraints.ipady = 20;
+        gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
+        jPanel1.add(jPanel2, gridBagConstraints);
 
         jPanel3.setBackground(new java.awt.Color(0, 102, 153));
 
@@ -439,7 +1004,7 @@ public class ResumoV2Detail extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 804, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -490,26 +1055,40 @@ public class ResumoV2Detail extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldDescricaoTipoServicoActionPerformed
 
-    private void jTextFieldCaracteristicaRecursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCaracteristicaRecursoActionPerformed
+    private void jTextFieldUnidadeVelocidadeRecursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldUnidadeVelocidadeRecursoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldCaracteristicaRecursoActionPerformed
+    }//GEN-LAST:event_jTextFieldUnidadeVelocidadeRecursoActionPerformed
 
     private void jTextFieldNomeLocalidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeLocalidadeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldNomeLocalidadeActionPerformed
 
-    private void jTextFieldDegrauRecursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDegrauRecursoActionPerformed
+    private void jTextFieldInicioPeriodoAssinaturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldInicioPeriodoAssinaturaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldDegrauRecursoActionPerformed
+    }//GEN-LAST:event_jTextFieldInicioPeriodoAssinaturaActionPerformed
 
-    private void jTextFieldVelocidadeRecursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldVelocidadeRecursoActionPerformed
+    private void jTextFieldlFimPeriodoAssinaturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldlFimPeriodoAssinaturaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldVelocidadeRecursoActionPerformed
+    }//GEN-LAST:event_jTextFieldlFimPeriodoAssinaturaActionPerformed
+
+    private void jTextFieldCaracteristicaRecurso1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCaracteristicaRecurso1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldCaracteristicaRecurso1ActionPerformed
+
+    private void jTextFieldDegrauRecurso1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDegrauRecurso1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldDegrauRecurso1ActionPerformed
+
+    private void jTextFieldVelocidadeRecurso1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldVelocidadeRecurso1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldVelocidadeRecurso1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabelCaracteristicaRecurso;
+    private javax.swing.JLabel jLabel1SinalICMS;
+    private javax.swing.JLabel jLabelAliquota;
+    private javax.swing.JLabel jLabelCaracteristicaRecurso1;
     private javax.swing.JLabel jLabelCnlRecursoReferencia;
     private javax.swing.JLabel jLabelControleSequencialGravacao;
     private javax.swing.JLabel jLabelDataEmissao;
@@ -517,36 +1096,107 @@ public class ResumoV2Detail extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelDdd;
     private javax.swing.JLabel jLabelDegrauRecurso;
     private javax.swing.JLabel jLabelDescricaoTipoServico;
+    private javax.swing.JLabel jLabelFimPeriodoAssinatura;
+    private javax.swing.JLabel jLabelFimPeriodoServicoMedido;
     private javax.swing.JLabel jLabelIdentificadorContaUnica;
     private javax.swing.JLabel jLabelIdentificadorUnicoRecurso;
+    private javax.swing.JLabel jLabelInicioPeriodoAssinatura;
+    private javax.swing.JLabel jLabelInicioPeriodoServicoMedido;
     private javax.swing.JLabel jLabelNomeLocalidade;
+    private javax.swing.JLabel jLabelNumNotaFiscal;
     private javax.swing.JLabel jLabelNumeroTelefone;
+    private javax.swing.JLabel jLabelQtdConsumo;
+    private javax.swing.JLabel jLabelSinalAssinatura;
+    private javax.swing.JLabel jLabelSinalValConta;
+    private javax.swing.JLabel jLabelSinalValTotalOutosImpostos;
+    private javax.swing.JLabel jLabelSinalValorConsumo;
     private javax.swing.JLabel jLabelTipoRegistro;
     private javax.swing.JLabel jLabelTipoServico;
     private javax.swing.JLabel jLabelTitle;
     private javax.swing.JLabel jLabelTitle1;
+    private javax.swing.JLabel jLabelUnidadeConsumo;
+    private javax.swing.JLabel jLabelUnidadeVelocidadeRecurso;
+    private javax.swing.JLabel jLabelValConta;
+    private javax.swing.JLabel jLabelValTotalImposto;
+    private javax.swing.JLabel jLabelValorAssinatura;
+    private javax.swing.JLabel jLabelValorConsumo;
+    private javax.swing.JLabel jLabelValorICMS;
     private javax.swing.JLabel jLabelVelocidadeRecurso;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextField jTextFieldCaracteristicaRecurso;
+    private javax.swing.JTextField jTextFieldAliquota;
+    private javax.swing.JTextField jTextFieldCaracteristicaRecurso1;
     private javax.swing.JTextField jTextFieldCnlRecursoReferencia;
     private javax.swing.JTextField jTextFieldControleSequencialGravacao;
     private javax.swing.JTextField jTextFieldDataEmissao;
     private javax.swing.JTextField jTextFieldDataVencimento;
     private javax.swing.JTextField jTextFieldDdd;
-    private javax.swing.JTextField jTextFieldDegrauRecurso;
+    private javax.swing.JTextField jTextFieldDegrauRecurso1;
     private javax.swing.JTextField jTextFieldDescricaoTipoServico;
+    private javax.swing.JTextField jTextFieldFimPeriodoServicoMedido;
     private javax.swing.JTextField jTextFieldIdentificadorContaUnica;
     private javax.swing.JTextField jTextFieldIdentificadorUnicoRecurso;
+    private javax.swing.JTextField jTextFieldInicioPeriodoAssinatura;
+    private javax.swing.JTextField jTextFieldInicioPeriodoServicoMedido;
     private javax.swing.JTextField jTextFieldNomeLocalidade;
+    private javax.swing.JTextField jTextFieldNumNotaFiscal;
     private javax.swing.JTextField jTextFieldNumeroTelefone;
+    private javax.swing.JTextField jTextFieldQtdConsumo;
+    private javax.swing.JTextField jTextFieldSinalAssinatura;
+    private javax.swing.JTextField jTextFieldSinalICMS;
+    private javax.swing.JTextField jTextFieldSinalValConta;
+    private javax.swing.JTextField jTextFieldSinalValTotalOutosImpostos;
+    private javax.swing.JTextField jTextFieldSinalValorConsumo;
     private javax.swing.JTextField jTextFieldTipoRegistro;
     private javax.swing.JTextField jTextFieldTipoServico;
-    private javax.swing.JTextField jTextFieldVelocidadeRecurso;
+    private javax.swing.JTextField jTextFieldUnidadeConsumo;
+    private javax.swing.JTextField jTextFieldUnidadeVelocidadeRecurso;
+    private javax.swing.JTextField jTextFieldValConta;
+    private javax.swing.JTextField jTextFieldValTotalImposto;
+    private javax.swing.JTextField jTextFieldValorAssinatura;
+    private javax.swing.JTextField jTextFieldValorConsumo;
+    private javax.swing.JTextField jTextFieldValorICMS;
+    private javax.swing.JTextField jTextFieldVelocidadeRecurso1;
+    private javax.swing.JTextField jTextFieldlFimPeriodoAssinatura;
     // End of variables declaration//GEN-END:variables
 
     private void loadData() {
-//        jLabelNumTelefone.setText(resumoV2.getNumTelefone());
+        jTextFieldTipoRegistro.setText(resumoV2.getTipoRegistro());
+        jTextFieldControleSequencialGravacao.setText(String.valueOf(resumoV2.getControleSequencialGravacao()));
+        jTextFieldIdentificadorContaUnica.setText(resumoV2.getIdentificadorContaUnica());
+        jTextFieldDataVencimento.setText(resumoV2.getDtaVencimento());
+        jTextFieldDataEmissao.setText(resumoV2.getDtaEmissao());
+        jTextFieldIdentificadorUnicoRecurso.setText(resumoV2.getIdentificadorUnicoRecurso());
+        jTextFieldCnlRecursoReferencia.setText(String.valueOf(resumoV2.getCnlRecursoReferencia()));
+        jTextFieldNomeLocalidade.setText(resumoV2.getNomeLocalidade());
+        jTextFieldDdd.setText(resumoV2.getDdd());
+        jTextFieldNumeroTelefone.setText(resumoV2.getNumTelefone());
+        jTextFieldTipoServico.setText(resumoV2.getTipoServico());
+        jTextFieldDescricaoTipoServico.setText(resumoV2.getTipoServico());
+        jTextFieldCaracteristicaRecurso1.setText(resumoV2.getCaracteristicaRecurso());
+        jTextFieldDegrauRecurso1.setText(resumoV2.getDegrauRecurso());
+        jTextFieldVelocidadeRecurso1.setText(resumoV2.getVelocidadeRecurso());
+        jTextFieldUnidadeVelocidadeRecurso.setText(resumoV2.getUnidadeVelocidadeRecurso());
+        jTextFieldInicioPeriodoAssinatura.setText(resumoV2.getInicioPeriodoAssinatura());
+        jTextFieldlFimPeriodoAssinatura.setText(resumoV2.getFimPeriodoAssinatura());
+        jTextFieldInicioPeriodoServicoMedido.setText(resumoV2.getInicioPeriodoServicoMedido());
+        jTextFieldFimPeriodoServicoMedido.setText(resumoV2.getFimPeriodoServicoMedido());
+        jTextFieldUnidadeConsumo.setText(resumoV2.getUnidadeConsumo());
+        jTextFieldQtdConsumo.setText(String.valueOf(resumoV2.getQtdConsumo()));
+        jTextFieldSinalValorConsumo.setText(resumoV2.getSinalValConsumo());
+        jTextFieldValorConsumo.setText(String.valueOf(resumoV2.getValConsumo()));
+        jTextFieldSinalAssinatura.setText(resumoV2.getSinalAssinatura());
+        jTextFieldValorAssinatura.setText(String.valueOf(resumoV2.getValAssinatura()));
+        jTextFieldAliquota.setText(resumoV2.getAliquota());
+        jTextFieldSinalICMS.setText(resumoV2.getSinalICMS());
+        jTextFieldValorICMS.setText(String.valueOf(resumoV2.getValICMS()));
+        jTextFieldSinalValTotalOutosImpostos.setText(resumoV2.getSinalValTotalOutrosImpostos());
+        jTextFieldValTotalImposto.setText(String.valueOf(resumoV2.getValTotalImpostos()));
+    }
+
+    private void maximizeFrame() {
+        this.setExtendedState(this.getExtendedState() | JFrame.MAXIMIZED_BOTH);
     }
 }

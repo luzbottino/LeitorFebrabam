@@ -15,8 +15,11 @@ public class ResumoV2 {
 
     private String tipoRegistro;
     private int controleSequencialGravacao;
+    private String identificadorContaUnica;
+    private String dtaVencimento;
+    private String dtaEmissao;
     private String identificadorUnicoRecurso;
-    private int clnRecursoReferencia;
+    private int cnlRecursoReferencia;
     private String nomeLocalidade;
     private String ddd;
     private String numTelefone;
@@ -69,12 +72,12 @@ public class ResumoV2 {
         this.identificadorUnicoRecurso = identificadorUnicoRecurso;
     }
 
-    public int getClnRecursoReferencia() {
-        return clnRecursoReferencia;
+    public int getCnlRecursoReferencia() {
+        return cnlRecursoReferencia;
     }
 
-    public void setClnRecursoReferencia(int clnRecursoReferencia) {
-        this.clnRecursoReferencia = clnRecursoReferencia;
+    public void setCnlRecursoReferencia(int cnlRecursoReferencia) {
+        this.cnlRecursoReferencia = cnlRecursoReferencia;
     }
 
     public String getNomeLocalidade() {
@@ -293,9 +296,33 @@ public class ResumoV2 {
         this.valConta = valConta;
     }
 
+    public String getIdentificadorContaUnica() {
+        return identificadorContaUnica;
+    }
+
+    public void setIdentificadorContaUnica(String identificadorContaUnica) {
+        this.identificadorContaUnica = identificadorContaUnica;
+    }
+
+    public String getDtaVencimento() {
+        return dtaVencimento;
+    }
+
+    public void setDtaVencimento(String dtaVencimento) {
+        this.dtaVencimento = dtaVencimento;
+    }
+
+    public String getDtaEmissao() {
+        return dtaEmissao;
+    }
+
+    public void setDtaEmissao(String dtaEmissao) {
+        this.dtaEmissao = dtaEmissao;
+    }
+
     @Override
     public String toString() {
-        return "Resumo{" + "tipoRegistro=" + tipoRegistro + ", controleSequencialGravacao=" + controleSequencialGravacao + ", identificadorUnicoRecurso=" + identificadorUnicoRecurso + ", clnRecursoReferencia=" + clnRecursoReferencia + ", nomeLocalidade=" + nomeLocalidade + ", ddd=" + ddd + ", numTelefone=" + numTelefone + ", tipoServico=" + tipoServico + ", descTipoServico=" + descTipoServico + ", caracteristicaRecurso=" + caracteristicaRecurso + ", degrauRecurso=" + degrauRecurso + ", velocidadeRecurso=" + velocidadeRecurso + ", unidadeVelocidadeRecurso=" + unidadeVelocidadeRecurso + ", inicioPeriodoAssinatura=" + inicioPeriodoAssinatura + ", fimPeriodoAssinatura=" + fimPeriodoAssinatura + ", inicioPeriodoServicoMedido=" + inicioPeriodoServicoMedido + ", fimPeriodoServicoMedido=" + fimPeriodoServicoMedido + ", unidadeConsumo=" + unidadeConsumo + ", qtdConsumo=" + qtdConsumo + ", sinalValConsumo=" + sinalValConsumo + ", valConsumo=" + valConsumo + ", sinalAssinatura=" + sinalAssinatura + ", valAssinatura=" + valAssinatura + ", aliquota=" + aliquota + ", sinalICMS=" + sinalICMS + ", valorICMS=" + valICMS + ", sinalValTotalOutrosImpostos=" + sinalValTotalOutrosImpostos + ", valTotalImpostos=" + valTotalImpostos + ", numNotaFiscal=" + numNotaFiscal + ", sinalValConta=" + sinalValConta + ", valConta=" + valConta + '}';
+        return "ResumoV2{" + "tipoRegistro=" + tipoRegistro + ", controleSequencialGravacao=" + controleSequencialGravacao + ", identificadorContaUnica=" + identificadorContaUnica + ", dtaVencimento=" + dtaVencimento + ", dtaEmissao=" + dtaEmissao + ", identificadorUnicoRecurso=" + identificadorUnicoRecurso + ", clnRecursoReferencia=" + cnlRecursoReferencia + ", nomeLocalidade=" + nomeLocalidade + ", ddd=" + ddd + ", numTelefone=" + numTelefone + ", tipoServico=" + tipoServico + ", descTipoServico=" + descTipoServico + ", caracteristicaRecurso=" + caracteristicaRecurso + ", degrauRecurso=" + degrauRecurso + ", velocidadeRecurso=" + velocidadeRecurso + ", unidadeVelocidadeRecurso=" + unidadeVelocidadeRecurso + ", inicioPeriodoAssinatura=" + inicioPeriodoAssinatura + ", fimPeriodoAssinatura=" + fimPeriodoAssinatura + ", inicioPeriodoServicoMedido=" + inicioPeriodoServicoMedido + ", fimPeriodoServicoMedido=" + fimPeriodoServicoMedido + ", unidadeConsumo=" + unidadeConsumo + ", qtdConsumo=" + qtdConsumo + ", sinalValConsumo=" + sinalValConsumo + ", valConsumo=" + valConsumo + ", sinalAssinatura=" + sinalAssinatura + ", valAssinatura=" + valAssinatura + ", aliquota=" + aliquota + ", sinalICMS=" + sinalICMS + ", valICMS=" + valICMS + ", sinalValTotalOutrosImpostos=" + sinalValTotalOutrosImpostos + ", valTotalImpostos=" + valTotalImpostos + ", numNotaFiscal=" + numNotaFiscal + ", sinalValConta=" + sinalValConta + ", valConta=" + valConta + '}';
     }
 
 }
