@@ -15,6 +15,8 @@ public class V2 {
 
     private HeaderV2 header;
     private List<ResumoV2> resumosV2;
+    private List<EnderecoABV2> enderecosABV2;
+    private List<BilhetacaoV2> bilhetacoesV2;
 
     public HeaderV2 getHeader() {
         return header;
@@ -32,9 +34,25 @@ public class V2 {
         this.resumosV2 = resumosV2;
     }
 
+    public List<EnderecoABV2> getEnderecosABV2() {
+        return enderecosABV2;
+    }
+
+    public void setEnderecosABV2(List<EnderecoABV2> enderecosABV2) {
+        this.enderecosABV2 = enderecosABV2;
+    }
+
+    public List<BilhetacaoV2> getBilhetacoesV2() {
+        return bilhetacoesV2;
+    }
+
+    public void setBilhetacoesV2(List<BilhetacaoV2> bilhetacoesV2) {
+        this.bilhetacoesV2 = bilhetacoesV2;
+    }
+
     @Override
     public String toString() {
-        return "V2{" + "header=" + header + ", resumosV2=" + resumosV2 + '}';
+        return "V2{" + "header=" + header + ", resumosV2=" + resumosV2 + ", enderecosABV2=" + enderecosABV2 + ", bilhetacoesV2=" + bilhetacoesV2 + '}';
     }
 
 }

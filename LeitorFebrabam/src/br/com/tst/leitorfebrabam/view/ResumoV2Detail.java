@@ -1194,6 +1194,9 @@ public class ResumoV2Detail extends javax.swing.JFrame {
         jTextFieldValorICMS.setText(String.valueOf(resumoV2.getValICMS()));
         jTextFieldSinalValTotalOutosImpostos.setText(resumoV2.getSinalValTotalOutrosImpostos());
         jTextFieldValTotalImposto.setText(String.valueOf(resumoV2.getValTotalImpostos()));
+        jTextFieldNumNotaFiscal.setText(resumoV2.getNumNotaFiscal());
+        jTextFieldSinalValConta.setText(resumoV2.getSinalValConta());
+        jTextFieldValConta.setText(String.valueOf(resumoV2.getValConta()));
     }
 
     private void maximizeFrame() {

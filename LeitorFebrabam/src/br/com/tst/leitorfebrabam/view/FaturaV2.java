@@ -5,6 +5,7 @@
  */
 package br.com.tst.leitorfebrabam.view;
 
+import br.com.tst.leitorfebrabam.model.EnderecoABV2;
 import br.com.tst.leitorfebrabam.model.ResumoV2;
 import br.com.tst.leitorfebrabam.model.V2;
 import java.util.Vector;
@@ -25,14 +26,15 @@ public class FaturaV2 extends javax.swing.JFrame {
      * Creates new form FaturaV2_v2
      */
     public FaturaV2(V2 v2) {
-        initComponents();        
+        initComponents();
 
         this.v2 = v2;
-        
+
         maximizeFrame();
         configMenu();
         configHeaderPanel();
         configResumoPanel();
+        configEnderecoPanel();
     }
 
     /**
@@ -45,8 +47,8 @@ public class FaturaV2 extends javax.swing.JFrame {
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
+        jPanelGray = new javax.swing.JPanel();
+        jPanelMenu = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabelIdentificadorContaUnica = new javax.swing.JLabel();
@@ -87,19 +89,22 @@ public class FaturaV2 extends javax.swing.JFrame {
         jPanelResumo = new javax.swing.JPanel();
         jScrollPanelResumoV2 = new javax.swing.JScrollPane();
         jTableResumoV2 = new javax.swing.JTable();
+        jPanelEnderecos = new javax.swing.JPanel();
+        jScrollPanelEnderecoV2 = new javax.swing.JScrollPane();
+        jTableEnderecoV2 = new javax.swing.JTable();
         jPanelChamadas = new javax.swing.JPanel();
         jPanelServicos = new javax.swing.JPanel();
         jPanelDesconto = new javax.swing.JPanel();
         jPanelTrailler = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
+        jPanelBanner = new javax.swing.JPanel();
         jLabelTitle2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanelGray.setBackground(new java.awt.Color(204, 204, 204));
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelMenu.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 51, 51));
@@ -148,13 +153,13 @@ public class FaturaV2 extends javax.swing.JFrame {
         jLabelValorFaturaValue.setForeground(new java.awt.Color(51, 51, 51));
         jLabelValorFaturaValue.setText("...");
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanelMenuLayout = new javax.swing.GroupLayout(jPanelMenu);
+        jPanelMenu.setLayout(jPanelMenuLayout);
+        jPanelMenuLayout.setHorizontalGroup(
+            jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelMenuLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jSeparator1)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabelIdentificadorContaUnica, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
@@ -169,9 +174,9 @@ public class FaturaV2 extends javax.swing.JFrame {
                     .addComponent(jLabelValorFaturaValue, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        jPanelMenuLayout.setVerticalGroup(
+            jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelMenuLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -511,6 +516,45 @@ public class FaturaV2 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("RESUMO", jPanelResumo);
 
+        jPanelEnderecos.setBackground(new java.awt.Color(255, 255, 255));
+
+        jScrollPanelEnderecoV2.setBackground(new java.awt.Color(255, 255, 255));
+
+        jTableEnderecoV2.setBackground(new java.awt.Color(255, 255, 255));
+        jTableEnderecoV2.setFont(new java.awt.Font("SansSerif", 0, 11)); // NOI18N
+        jTableEnderecoV2.setForeground(new java.awt.Color(51, 51, 51));
+        jTableEnderecoV2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPanelEnderecoV2.setViewportView(jTableEnderecoV2);
+
+        javax.swing.GroupLayout jPanelEnderecosLayout = new javax.swing.GroupLayout(jPanelEnderecos);
+        jPanelEnderecos.setLayout(jPanelEnderecosLayout);
+        jPanelEnderecosLayout.setHorizontalGroup(
+            jPanelEnderecosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelEnderecosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPanelEnderecoV2, javax.swing.GroupLayout.DEFAULT_SIZE, 735, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanelEnderecosLayout.setVerticalGroup(
+            jPanelEnderecosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelEnderecosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPanelEnderecoV2, javax.swing.GroupLayout.DEFAULT_SIZE, 593, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jTabbedPane1.addTab("ENDEREÇOS PONTA A E B", jPanelEnderecos);
+
         jPanelChamadas.setBackground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout jPanelChamadasLayout = new javax.swing.GroupLayout(jPanelChamadas);
@@ -571,7 +615,7 @@ public class FaturaV2 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("TRAILLER", jPanelTrailler);
 
-        jPanel4.setBackground(new java.awt.Color(0, 102, 153));
+        jPanelBanner.setBackground(new java.awt.Color(0, 102, 153));
 
         jLabelTitle2.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
         jLabelTitle2.setForeground(new java.awt.Color(0, 153, 255));
@@ -582,43 +626,43 @@ public class FaturaV2 extends javax.swing.JFrame {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setText("Leitor Febrabam V1");
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanelBannerLayout = new javax.swing.GroupLayout(jPanelBanner);
+        jPanelBanner.setLayout(jPanelBannerLayout);
+        jPanelBannerLayout.setHorizontalGroup(
+            jPanelBannerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelBannerLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabelTitle2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 602, Short.MAX_VALUE)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+        jPanelBannerLayout.setVerticalGroup(
+            jPanelBannerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelBannerLayout.createSequentialGroup()
                 .addComponent(jLabelTitle2)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanelGrayLayout = new javax.swing.GroupLayout(jPanelGray);
+        jPanelGray.setLayout(jPanelGrayLayout);
+        jPanelGrayLayout.setHorizontalGroup(
+            jPanelGrayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelGrayLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                 .addContainerGap())
-            .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanelBanner, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        jPanelGrayLayout.setVerticalGroup(
+            jPanelGrayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelGrayLayout.createSequentialGroup()
+                .addComponent(jPanelBanner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanelGrayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -627,11 +671,11 @@ public class FaturaV2 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanelGray, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanelGray, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -663,19 +707,22 @@ public class FaturaV2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelValorTotalChamadasValue;
     private javax.swing.JLabel jLabelValorTotalServicos;
     private javax.swing.JLabel jLabelValorTotalServicosValue;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanelBanner;
     private javax.swing.JPanel jPanelChamadas;
     private javax.swing.JPanel jPanelDesconto;
+    private javax.swing.JPanel jPanelEnderecos;
+    private javax.swing.JPanel jPanelGray;
     private javax.swing.JPanel jPanelHeader;
+    private javax.swing.JPanel jPanelMenu;
     private javax.swing.JPanel jPanelResumo;
     private javax.swing.JPanel jPanelServicos;
     private javax.swing.JPanel jPanelTrailler;
+    private javax.swing.JScrollPane jScrollPanelEnderecoV2;
     private javax.swing.JScrollPane jScrollPanelResumoV2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTable jTableEnderecoV2;
     private javax.swing.JTable jTableResumoV2;
     private javax.swing.JTextField jTextFieldCgcCliente;
     private javax.swing.JTextField jTextFieldCodigoCliente;
@@ -710,26 +757,54 @@ public class FaturaV2 extends javax.swing.JFrame {
     }
 
     private void configResumoPanel() {
-        MyTableModel myTableModel = new MyTableModel(getRowData(), getColumnNames());
+        MyTableModel myTableModel = new MyTableModel(getResumoRowData(), getColumnNames("Controle Sequencial de Gravação", "Nº de Telefone", "Número da Nota Fiscal", "Valor da Conta"));
         jTableResumoV2.setModel(myTableModel);
-        
-        selectListener();
+
+        selectResumoListener();
     }
 
-    private Vector<String> getColumnNames() {
+    private void configEnderecoPanel() {
+        MyTableModel myTableModel = new MyTableModel(getEnderecoRowData(), getColumnNames("Controle Sequencial de Gravação", "Nº de Telefone"));
+        jTableEnderecoV2.setModel(myTableModel);
+        
+        selectEnderecoListener();
+    }
+
+    private Vector<String> getColumnNames(String... params) {
         Vector<String> columnNames = new Vector<String>();
-        
-        columnNames.addElement("Controle Sequencial de Gravação");
-        columnNames.addElement("Nº do Telefone");
-        columnNames.addElement("Número da Nota Fiscal");
-        columnNames.addElement("Valor da Conta");    
-        
+
+        for (String string : params) {
+
+            columnNames.addElement(string);
+        }
+
         return columnNames;
     }
 
-    private Vector<Vector> getRowData() {
+    private Vector<Vector> getEnderecoRowData() {
         Vector<Vector> rowData = new Vector<>();
-        
+
+        if (v2.getEnderecosABV2() != null) {
+
+            for (EnderecoABV2 enderecoABV2 : v2.getEnderecosABV2()) {
+                Vector<String> row = new Vector<>();
+                row.addElement(String.valueOf(enderecoABV2.getControleSequencialGravacao()));
+                row.addElement(enderecoABV2.getNumTelefone());
+                rowData.add(row);
+            }
+        } else {
+            Vector<String> row = new Vector<>();
+            row.addElement("NÃO INFORMADO");
+            row.addElement("NÃO INFORMADO");
+            rowData.add(row);
+        }
+
+        return rowData;
+    }
+
+    private Vector<Vector> getResumoRowData() {
+        Vector<Vector> rowData = new Vector<>();
+
         for (ResumoV2 resumoV2 : v2.getResumosV2()) {
             Vector<String> row = new Vector<>();
             row.addElement(String.valueOf(resumoV2.getControleSequencialGravacao()));
@@ -738,21 +813,23 @@ public class FaturaV2 extends javax.swing.JFrame {
             row.addElement(resumoV2.getValConta().toString());
             rowData.add(row);
         }
-        
+
         return rowData;
     }
 
-    private void selectListener() {
+    private void selectResumoListener() {
         jTableResumoV2.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        
+
         ListSelectionModel lsm = jTableResumoV2.getSelectionModel();
         lsm.addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
-                if(e.getValueIsAdjusting()) return;
-                
+                if (e.getValueIsAdjusting()) {
+                    return;
+                }
+
                 ListSelectionModel lsm = (ListSelectionModel) e.getSource();
-                if(!lsm.isSelectionEmpty()){
+                if (!lsm.isSelectionEmpty()) {
                     int selectedRow = lsm.getMinSelectionIndex();
                     String controleSequencialSelected = (String) jTableResumoV2.getValueAt(selectedRow, 0);
                     showDetail(controleSequencialSelected);
@@ -763,14 +840,50 @@ public class FaturaV2 extends javax.swing.JFrame {
                 int controleSequencialSearch = Integer.valueOf(controleSequencialSelected);
                 ResumoV2 resumoV2 = new ResumoV2();
                 for (ResumoV2 resumoV2Search : v2.getResumosV2()) {
-                    if(resumoV2Search.getControleSequencialGravacao() == controleSequencialSearch){
+                    if (resumoV2Search.getControleSequencialGravacao() == controleSequencialSearch) {
                         resumoV2 = resumoV2Search;
                     }
                 }
-                
+
                 ResumoV2Detail resumoV2Detail = new ResumoV2Detail(resumoV2);
                 resumoV2Detail.setVisible(true);
-                        
+
+            }
+        });
+    }
+
+    private void selectEnderecoListener() {
+        jTableEnderecoV2.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+
+        ListSelectionModel lsm = jTableEnderecoV2.getSelectionModel();
+        lsm.addListSelectionListener(new ListSelectionListener() {
+
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                if (e.getValueIsAdjusting()) {
+                    return;
+                }
+
+                ListSelectionModel lsm = (ListSelectionModel) e.getSource();
+                if (!lsm.isSelectionEmpty()) {
+                    if (v2.getEnderecosABV2() != null) {
+                        int selectedRow = lsm.getMinSelectionIndex();
+                        String controleSequencialSelected = (String) jTableEnderecoV2.getValueAt(selectedRow, 0);
+                        showDetail(controleSequencialSelected);
+                    }else{
+                        showDetail();
+                    }
+
+                }
+            }
+
+            private void showDetail(String controleSequencialSelected) {
+                
+            }
+
+            private void showDetail() {
+                EnderecoABV2Detail eneEnderecoABV2Detail = new EnderecoABV2Detail();
+                eneEnderecoABV2Detail.setVisible(true);
             }
         });
     }
