@@ -10,9 +10,9 @@ import br.com.tst.leitorfebrabam.model.BilhetacaoV2;
 import br.com.tst.leitorfebrabam.model.EnderecoABV2;
 import br.com.tst.leitorfebrabam.model.HeaderV2;
 import br.com.tst.leitorfebrabam.model.ResumoV2;
+import br.com.tst.leitorfebrabam.model.ServicoV2;
 import br.com.tst.leitorfebrabam.model.V2;
 import br.com.tst.leitorfebrabam.util.CursorToolkitTwo;
-import br.com.tst.leitorfebrabam.view.FaturaV2;
 import br.com.tst.leitorfebrabam.view.FaturaV2;
 import br.com.tst.leitorfebrabam.view.ProgressBar;
 import java.math.BigDecimal;
@@ -38,6 +38,7 @@ public class GenerateV2View extends SwingWorker<V2, V2> {
     private List<ResumoV2> resumosV2;
     private List<EnderecoABV2> enderecosABV2;
     private List<BilhetacaoV2> bilhetacoesV2;
+    private List<ServicoV2> servicosV2;
 
     public GenerateV2View(Febrabam febrabam, ProgressBar progressBar, JFrame jFrame) {
         this.febrabam = febrabam;
@@ -51,6 +52,9 @@ public class GenerateV2View extends SwingWorker<V2, V2> {
     protected V2 doInBackground() throws Exception {
         v2 = new V2();
         resumosV2 = new ArrayList<>();
+        enderecosABV2 = new ArrayList<>();
+        bilhetacoesV2 = new ArrayList<>();
+        servicosV2 = new ArrayList<>();
 
         int totalOfLines = febrabam.getTotalOfLines();
 
@@ -58,10 +62,11 @@ public class GenerateV2View extends SwingWorker<V2, V2> {
             setProgress(Math.round(((float) i / (float) totalOfLines) * 100f));
             buildV2(febrabam.getLine());
             febrabam.readLine();
-//            Thread.sleep(1);
         }
         v2.setResumosV2(resumosV2);
         v2.setEnderecosABV2(enderecosABV2);
+        v2.setBilhetacoesV2(bilhetacoesV2);
+        v2.setServicosV2(servicosV2);
 
         febrabam.closeFebrabam();
         return v2;
@@ -76,6 +81,8 @@ public class GenerateV2View extends SwingWorker<V2, V2> {
             enderecosABV2.add(buildEndereco(line));
         } else if (line.charAt(0) == '3') {
             bilhetacoesV2.add(buildBilhete(line));
+        } else if (line.charAt(0) == '4') {
+            servicosV2.add(buildServico(line));
         }
     }
 
@@ -138,6 +145,7 @@ public class GenerateV2View extends SwingWorker<V2, V2> {
 
         return resumoV2;
     }
+
     //PRECISA SER COMPLETADO
     private EnderecoABV2 buildEndereco(String line) {
         EnderecoABV2 enderecoABV2 = new EnderecoABV2();
@@ -156,7 +164,7 @@ public class GenerateV2View extends SwingWorker<V2, V2> {
 
     private BilhetacaoV2 buildBilhete(String line) {
         BilhetacaoV2 bilhetacaoV2 = new BilhetacaoV2();
-        
+
         bilhetacaoV2.setTipoRegistro(line.substring(0, 1));
         bilhetacaoV2.setControleSequencialGravacao(Integer.valueOf(line.substring(1, 13)));
         bilhetacaoV2.setDtaVencimento(formatDate(line.substring(13, 21)));
@@ -178,14 +186,60 @@ public class GenerateV2View extends SwingWorker<V2, V2> {
         bilhetacaoV2.setAreaDdd(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(155, 159))));
         bilhetacaoV2.setNumTelefoneChamado(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(159, 169))));
         bilhetacaoV2.setConjugadoNumeroTelefoneChamado(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(169, 171))));
-//        bilhetacaoV2.setDuracaoLigacao(formatCallDuration((line.substring(159, 169))));
+        bilhetacaoV2.setDuracaoLigacao(line.substring(171, 177));
+        bilhetacaoV2.setCategoria(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(177, 180))));
+        bilhetacaoV2.setDescCategoria(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(180, 230))));
+        bilhetacaoV2.setHorLigacao(formatHorCall(line.substring(230, 236)));
+        bilhetacaoV2.setTipChamada(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(236, 237))));
+        bilhetacaoV2.setGrupoHorTarifario(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(237, 238))));
+        bilhetacaoV2.setDescHorTarifario(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(238, 263))));
+        bilhetacaoV2.setDegrauLigacao(Integer.valueOf(line.substring(263, 265)));
+        bilhetacaoV2.setSinalValLigacao(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(265, 266))));
+        bilhetacaoV2.setAliquotaICMS(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(266, 271))));
+        bilhetacaoV2.setValLigacaoComImposto(formatMonetary(line.substring(271, 284)));
+        bilhetacaoV2.setClasseServico(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(284, 292))));
+
+        return bilhetacaoV2;
+    }
+
+    private ServicoV2 buildServico(String line) {
+        ServicoV2 servicoV2 = new ServicoV2();
+        
+        servicoV2.setTipoServico(line.substring(0, 1));
+        servicoV2.setControleSequencialGravacao(Integer.valueOf(line.substring(1, 13)));
+        servicoV2.setDtaVencimento(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(formatDate(line.substring(13, 21)))));
+        servicoV2.setDtaEmissao(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(21, 29))));
+        servicoV2.setIdentUnicoRecurso(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(29, 54))));
+        servicoV2.setCnlRecursoReferencia(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(54, 59))));
+        servicoV2.setDdd(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(59, 61))));
+        servicoV2.setNumTelefone(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(61, 71))));
+        servicoV2.setCaracteristicaRecurso(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(71, 86))));
+        servicoV2.setDtaServico(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(formatDate(line.substring(86, 94)))));
+        servicoV2.setCnlLocalidadeChamada(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(94, 99))));
+        servicoV2.setNomeLocalidadeChamada(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(99, 124))));
+        servicoV2.setUfTelefoneChamado(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(124, 126))));
+        servicoV2.setCodNacionalInternacional(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(126, 128))));
+        servicoV2.setCodOperadora(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(128, 130))));
+        servicoV2.setDescOperadora(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(130, 150))));
+        servicoV2.setCodPaisChamado(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(150, 153))));
+        servicoV2.setAreaDdd(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(153, 157))));
+        servicoV2.setNumTelefoneChamado(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(157, 167))));
+        servicoV2.setConjugadoTelefoneChamado(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(167, 168))));
+        servicoV2.setDuracaoLigacao(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(168, 175))));
+        servicoV2.setHorarioLigacao(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(formatHorCall(line.substring(175, 181)))));
+        servicoV2.setGrupoCategoria(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(181, 184))));
+        servicoV2.setDescGrupoCategoria(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(184, 214))));
+        servicoV2.setCategoria(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(214, 217))));
+        servicoV2.setDescCategoria(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(217, 257))));
+        servicoV2.setSinalValLigacao(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(257, 258))));
+        servicoV2.setValLigacao(formatMonetary(line.substring(258, 271)).toString());
+        servicoV2.setClasseServico(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(271, 276))));
         
         
         
-        
-        
-        System.out.println(bilhetacaoV2.toString());
-        return bilhetacaoV2;                
+        System.out.println(servicoV2);
+                
+        return servicoV2;
     }
 
     @Override
@@ -236,8 +290,108 @@ public class GenerateV2View extends SwingWorker<V2, V2> {
         return substring;
     }
 
-//    private String formatCallDuration(String string) {
-//        
-//    }
+    /**
+     * *
+     * O parâmetro segue o padrão 6,1 sendo 5 posições com inteiro representando
+     * os minutos e uma casa decimal representando o décimo de minuto. O formato
+     * da duração é 00:00:00
+     *
+     * @param string
+     * @return
+     */
+    private String formatCallDuration(String string) {
+        //Calcula os segundos da ligação
+        String secondsFormat = getSeconds(string);
+        //Resgata os minutos do parâmetro
+        int minutes = Integer.valueOf(string.substring(0, 5));
+        if (minutes >= 60) {
+            String hoursFormat = getHours(minutes);
+            String minutesFormat = getMinutes(minutes);
+
+            return hoursFormat + ":" + minutesFormat + ":" + secondsFormat;
+        }
+
+        return "00:" + string.substring(2, 4) + ":" + secondsFormat;
+    }
+
+    private String getSeconds(String string) {
+        BigDecimal seconds;
+        BigDecimal sixty = new BigDecimal("60");
+        BigDecimal decimal = new BigDecimal("10");
+        //Verifica se os segundos está com valor zero
+        if (string.substring(5).equals("0")) {
+            return "00";
+        }
+        //Resgata a última posição do paramêtro string que representa o décimo de minuto
+        BigDecimal decimalSeconds = new BigDecimal(string.substring(5));
+        //Multiplica o décimo de minuto por 60
+        seconds = decimalSeconds.multiply(sixty);
+        //Divide o resultado por 10
+        seconds = seconds.divide(decimal);
+
+        //Retorna em texto os segundos da ligação
+        return seconds.toString();
+    }
+
+    private String getHours(int minutes) {
+        BigDecimal sixty = new BigDecimal(60);
+        //Divide os minutos por 60 para resgatar as horas
+        BigDecimal hours = new BigDecimal(minutes).divide(sixty, 6, BigDecimal.ROUND_CEILING);
+
+        //Caso o valor tenha casa decimal, a condição abaixo retorna apenas o inteiro
+        if (hours.toString().contains(".")) {
+            int hoursFormat = Integer.valueOf(hours.toString().substring(0, StringUtils.indexOf(hours.toString(), ".")));
+            if (hoursFormat >= 10) {
+                return String.valueOf(hoursFormat);
+            } else {
+                return "0" + hoursFormat;
+            }
+        }
+        int hoursFormat = Integer.valueOf(hours.toString());
+
+        if (hoursFormat >= 10) {
+            return String.valueOf(hoursFormat);
+        } else {
+            return "0" + String.valueOf(hoursFormat);
+        }
+
+    }
+
+    private String getMinutes(int minutes) {
+        BigDecimal sixty = new BigDecimal("60");
+        //Divide os minutos por 60 para resgatar as horas
+        BigDecimal hours = new BigDecimal(minutes).divide(sixty, 6, BigDecimal.ROUND_CEILING);
+
+        //Caso o valor tenha casa decimal, calcula os minutos
+        if (hours.toString().contains(".")) {
+            //Resgata apenas as casas decimais da hora com ponto
+            String decimalPart = hours.toString().substring(hours.toString().indexOf("."), hours.toString().length());
+
+            BigDecimal minutesFormat = new BigDecimal("0" + decimalPart);
+            minutesFormat = minutesFormat.multiply(sixty);
+
+            //Retorna os minutos sem as casas decimais
+            minutes = Integer.valueOf(minutesFormat.toString().substring(0, StringUtils.indexOf(minutesFormat.toString(), ".")));
+
+            if (minutes >= 10) {
+                return String.valueOf(minutes);
+            } else {
+                return "0" + String.valueOf(minutes);
+            }
+        }
+
+        return "00";
+    }
+
+    /**
+     * *
+     * Retorna o parâmetro no formato 00:00:00
+     *
+     * @param substring
+     * @return
+     */
+    private String formatHorCall(String substring) {
+        return substring.substring(0, 2) + ":" + substring.substring(2, 4) + ":" + substring.substring(4, 6);
+    }
 
 }

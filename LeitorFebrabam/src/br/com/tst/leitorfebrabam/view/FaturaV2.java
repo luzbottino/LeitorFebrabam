@@ -5,8 +5,10 @@
  */
 package br.com.tst.leitorfebrabam.view;
 
+import br.com.tst.leitorfebrabam.model.BilhetacaoV2;
 import br.com.tst.leitorfebrabam.model.EnderecoABV2;
 import br.com.tst.leitorfebrabam.model.ResumoV2;
+import br.com.tst.leitorfebrabam.model.ServicoV2;
 import br.com.tst.leitorfebrabam.model.V2;
 import java.util.Vector;
 import javax.swing.JFrame;
@@ -35,6 +37,8 @@ public class FaturaV2 extends javax.swing.JFrame {
         configHeaderPanel();
         configResumoPanel();
         configEnderecoPanel();
+        configBilhetacaoPanel();
+        configServicoPanel();
     }
 
     /**
@@ -93,7 +97,11 @@ public class FaturaV2 extends javax.swing.JFrame {
         jScrollPanelEnderecoV2 = new javax.swing.JScrollPane();
         jTableEnderecoV2 = new javax.swing.JTable();
         jPanelChamadas = new javax.swing.JPanel();
+        jScrollPaneBilhetacao = new javax.swing.JScrollPane();
+        jTableBilhetacao = new javax.swing.JTable();
         jPanelServicos = new javax.swing.JPanel();
+        jScrollPaneServico = new javax.swing.JScrollPane();
+        jTableServico = new javax.swing.JTable();
         jPanelDesconto = new javax.swing.JPanel();
         jPanelTrailler = new javax.swing.JPanel();
         jPanelBanner = new javax.swing.JPanel();
@@ -557,30 +565,68 @@ public class FaturaV2 extends javax.swing.JFrame {
 
         jPanelChamadas.setBackground(new java.awt.Color(255, 255, 255));
 
+        jTableBilhetacao.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPaneBilhetacao.setViewportView(jTableBilhetacao);
+
         javax.swing.GroupLayout jPanelChamadasLayout = new javax.swing.GroupLayout(jPanelChamadas);
         jPanelChamadas.setLayout(jPanelChamadasLayout);
         jPanelChamadasLayout.setHorizontalGroup(
             jPanelChamadasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 759, Short.MAX_VALUE)
+            .addGroup(jPanelChamadasLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPaneBilhetacao, javax.swing.GroupLayout.DEFAULT_SIZE, 735, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanelChamadasLayout.setVerticalGroup(
             jPanelChamadasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 617, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelChamadasLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPaneBilhetacao, javax.swing.GroupLayout.DEFAULT_SIZE, 309, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("CHAMADAS", jPanelChamadas);
 
         jPanelServicos.setBackground(new java.awt.Color(255, 255, 255));
 
+        jTableServico.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPaneServico.setViewportView(jTableServico);
+
         javax.swing.GroupLayout jPanelServicosLayout = new javax.swing.GroupLayout(jPanelServicos);
         jPanelServicos.setLayout(jPanelServicosLayout);
         jPanelServicosLayout.setHorizontalGroup(
             jPanelServicosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 759, Short.MAX_VALUE)
+            .addGroup(jPanelServicosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPaneServico, javax.swing.GroupLayout.DEFAULT_SIZE, 735, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanelServicosLayout.setVerticalGroup(
             jPanelServicosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 617, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelServicosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPaneServico, javax.swing.GroupLayout.DEFAULT_SIZE, 309, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("SERVIÇOS", jPanelServicos);
@@ -718,12 +764,16 @@ public class FaturaV2 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelResumo;
     private javax.swing.JPanel jPanelServicos;
     private javax.swing.JPanel jPanelTrailler;
+    private javax.swing.JScrollPane jScrollPaneBilhetacao;
+    private javax.swing.JScrollPane jScrollPaneServico;
     private javax.swing.JScrollPane jScrollPanelEnderecoV2;
     private javax.swing.JScrollPane jScrollPanelResumoV2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTable jTableBilhetacao;
     private javax.swing.JTable jTableEnderecoV2;
     private javax.swing.JTable jTableResumoV2;
+    private javax.swing.JTable jTableServico;
     private javax.swing.JTextField jTextFieldCgcCliente;
     private javax.swing.JTextField jTextFieldCodigoCliente;
     private javax.swing.JTextField jTextFieldControleSequencialGravacao;
@@ -766,8 +816,21 @@ public class FaturaV2 extends javax.swing.JFrame {
     private void configEnderecoPanel() {
         MyTableModel myTableModel = new MyTableModel(getEnderecoRowData(), getColumnNames("Controle Sequencial de Gravação", "Nº de Telefone"));
         jTableEnderecoV2.setModel(myTableModel);
-        
+
         selectEnderecoListener();
+    }
+
+    private void configBilhetacaoPanel() {
+        MyTableModel myTableModel = new MyTableModel(getBilhetacaoRowData(), getColumnNames("Controle Sequencial de Gravacação", "Nº de Telefone", "Categoria", "Descrição da Categoria", "Nº de Telefone Chamado", "Valor da Ligacao"));
+        
+        jTableBilhetacao.setModel(myTableModel);
+
+        selectBilhetacaoListener();
+    }
+
+    private void configServicoPanel() {        
+          MyTableModel myTableModel = new MyTableModel(getServicoRowData(), getColumnNames("Controle Sequencial de Gravacação", "Nº de Telefone", "Grupo da Categoria", "Desc do Grupo da Categoria", "Categoria", "Desc da Categoria", "Valor da Ligacao"));
+          jTableServico.setModel(myTableModel);
     }
 
     private Vector<String> getColumnNames(String... params) {
@@ -784,7 +847,7 @@ public class FaturaV2 extends javax.swing.JFrame {
     private Vector<Vector> getEnderecoRowData() {
         Vector<Vector> rowData = new Vector<>();
 
-        if (v2.getEnderecosABV2() != null) {
+        if (v2.getEnderecosABV2() != null && !v2.getEnderecosABV2().isEmpty()) {
 
             for (EnderecoABV2 enderecoABV2 : v2.getEnderecosABV2()) {
                 Vector<String> row = new Vector<>();
@@ -811,6 +874,42 @@ public class FaturaV2 extends javax.swing.JFrame {
             row.addElement(resumoV2.getNumTelefone());
             row.addElement(resumoV2.getNumNotaFiscal());
             row.addElement(resumoV2.getValConta().toString());
+            rowData.add(row);
+        }
+
+        return rowData;
+    }
+
+    private Vector<Vector> getBilhetacaoRowData() {
+        Vector<Vector> rowData = new Vector<>();
+
+        for (BilhetacaoV2 bilhetacaoV2 : v2.getBilhetacoesV2()) {
+            Vector<String> row = new Vector<>();
+            row.addElement(String.valueOf(bilhetacaoV2.getControleSequencialGravacao()));
+            row.addElement(bilhetacaoV2.getNumTelefone());
+            row.addElement(bilhetacaoV2.getCategoria());
+            row.addElement(bilhetacaoV2.getDescCategoria());
+            row.addElement(bilhetacaoV2.getNumTelefoneChamado());
+            row.addElement(bilhetacaoV2.getValLigacaoComImposto().toString());
+            rowData.add(row);
+        }
+
+        return rowData;
+    }
+    
+    private Vector<Vector> getServicoRowData() {
+        Vector<Vector> rowData = new Vector<>();
+
+        for (ServicoV2 servicoV2 : v2.getServicosV2()) {
+            Vector<String> row = new Vector<>();
+            row.addElement(String.valueOf(servicoV2.getControleSequencialGravacao()));
+            row.addElement(servicoV2.getNumTelefone());
+            row.addElement(servicoV2.getGrupoCategoria());
+            row.addElement(servicoV2.getDescGrupoCategoria());
+            row.addElement(servicoV2.getCategoria());
+            row.addElement(servicoV2.getDescCategoria());
+            row.addElement(servicoV2.getNumTelefoneChamado());
+            row.addElement(servicoV2.getValLigacao().toString());
             rowData.add(row);
         }
 
@@ -852,6 +951,7 @@ public class FaturaV2 extends javax.swing.JFrame {
         });
     }
 
+    //Falta construção da lógica para preencher os dados em caso de encontrar endereços
     private void selectEnderecoListener() {
         jTableEnderecoV2.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
@@ -866,11 +966,11 @@ public class FaturaV2 extends javax.swing.JFrame {
 
                 ListSelectionModel lsm = (ListSelectionModel) e.getSource();
                 if (!lsm.isSelectionEmpty()) {
-                    if (v2.getEnderecosABV2() != null) {
+                    if (v2.getEnderecosABV2() != null && !v2.getEnderecosABV2().isEmpty()) {
                         int selectedRow = lsm.getMinSelectionIndex();
                         String controleSequencialSelected = (String) jTableEnderecoV2.getValueAt(selectedRow, 0);
                         showDetail(controleSequencialSelected);
-                    }else{
+                    } else {
                         showDetail();
                     }
 
@@ -878,12 +978,47 @@ public class FaturaV2 extends javax.swing.JFrame {
             }
 
             private void showDetail(String controleSequencialSelected) {
-                
+
             }
 
             private void showDetail() {
                 EnderecoABV2Detail eneEnderecoABV2Detail = new EnderecoABV2Detail();
                 eneEnderecoABV2Detail.setVisible(true);
+            }
+        });
+    }
+
+    private void selectBilhetacaoListener() {
+        jTableBilhetacao.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+
+        ListSelectionModel lsm = jTableBilhetacao.getSelectionModel();
+        lsm.addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                if (e.getValueIsAdjusting()) {
+                    return;
+                }
+
+                ListSelectionModel lsm = (ListSelectionModel) e.getSource();
+                if (!lsm.isSelectionEmpty()) {
+                    int selectedRow = lsm.getMinSelectionIndex();
+                    String controleSequencialSelected = (String) jTableBilhetacao.getValueAt(selectedRow, 0);
+                    showDetail(controleSequencialSelected);
+                }
+            }
+
+            private void showDetail(String controleSequencialSelected) {
+                int controleSequencialSearch = Integer.valueOf(controleSequencialSelected);
+                BilhetacaoV2 bilhetacaoV2 = new BilhetacaoV2();
+                for (BilhetacaoV2 bilhetacaoV2Search : v2.getBilhetacoesV2()) {
+                    if (bilhetacaoV2Search.getControleSequencialGravacao() == controleSequencialSearch) {
+                        bilhetacaoV2 = bilhetacaoV2Search;
+                    }
+                }
+
+                BilhetacaoV2Detail bilhetacaoV2Detail = new BilhetacaoV2Detail(bilhetacaoV2);
+                bilhetacaoV2Detail.setVisible(true);
+
             }
         });
     }

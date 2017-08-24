@@ -6,12 +6,6 @@
 package br.com.tst.leitorfebrabam.view;
 
 import br.com.tst.leitorfebrabam.file.Febrabam;
-import br.com.tst.leitorfebrabam.model.Fatura;
-import br.com.tst.leitorfebrabam.services.FebrabamService;
-import br.com.tst.leitorfebrabam.services.V3Service;
-import java.awt.Desktop;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.logging.Level;

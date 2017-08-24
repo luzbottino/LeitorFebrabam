@@ -40,8 +40,8 @@ public class BilhetacaoV2 {
     private String horLigacao;
     private String tipChamada;
     private String grupoHorTarifario;
-    private String descHorTarifacio;
-    private String degrauLigacao;
+    private String descHorTarifario;
+    private int degrauLigacao;
     private String sinalValLigacao;
     private String aliquotaICMS;
     private BigDecimal valLigacaoComImposto;
@@ -263,19 +263,19 @@ public class BilhetacaoV2 {
         this.grupoHorTarifario = grupoHorTarifario;
     }
 
-    public String getDescHorTarifacio() {
-        return descHorTarifacio;
+    public String getDescHorTarifario() {
+        return descHorTarifario;
     }
 
-    public void setDescHorTarifacio(String descHorTarifacio) {
-        this.descHorTarifacio = descHorTarifacio;
+    public void setDescHorTarifario(String descHorTarifario) {
+        this.descHorTarifario = descHorTarifario;
     }
 
-    public String getDegrauLigacao() {
+    public int getDegrauLigacao() {
         return degrauLigacao;
     }
 
-    public void setDegrauLigacao(String degrauLigacao) {
+    public void setDegrauLigacao(int degrauLigacao) {
         this.degrauLigacao = degrauLigacao;
     }
 
@@ -313,7 +313,7 @@ public class BilhetacaoV2 {
 
     @Override
     public String toString() {
-        return "BilhetacaoV2{" + "tipoRegistro=" + tipoRegistro + ", controleSequencialGravacao=" + controleSequencialGravacao + ", dtaVencimento=" + dtaVencimento + ", dtaEmissao=" + dtaEmissao + ", identificadorUnicoRecurso=" + identificadorUnicoRecurso + ", cnlRecursoReferencia=" + cnlRecursoReferencia + ", Ddd=" + Ddd + ", numTelefone=" + numTelefone + ", caracteristicaRecurso=" + caracteristicaRecurso + ", degrauRecurso=" + degrauRecurso + ", dtaLigacao=" + dtaLigacao + ", cnlLocalidadeChamada=" + cnlLocalidadeChamada + ", nomeLocalidadeChamada=" + nomeLocalidadeChamada + ", ufTelefoneChamado=" + ufTelefoneChamado + ", codNacionalInternacional=" + codNacionalInternacional + ", codOperadora=" + codOperadora + ", descOperadora=" + descOperadora + ", codPaisChamado=" + codPaisChamado + ", areaDdd=" + areaDdd + ", numTelefoneChamado=" + numTelefoneChamado + ", conjugadoNumeroTelefoneChamado=" + conjugadoNumeroTelefoneChamado + ", duracaoLigacao=" + duracaoLigacao + ", categoria=" + categoria + ", descCategoria=" + descCategoria + ", horLigacao=" + horLigacao + ", tipChamada=" + tipChamada + ", grupoHorTarifario=" + grupoHorTarifario + ", descHorTarifacio=" + descHorTarifacio + ", degrauLigacao=" + degrauLigacao + ", sinalValLigacao=" + sinalValLigacao + ", aliquotaICMS=" + aliquotaICMS + ", valLigacaoComImposto=" + valLigacaoComImposto + ", classeServico=" + classeServico + '}';
+        return "BilhetacaoV2{" + "tipoRegistro=" + tipoRegistro + ", controleSequencialGravacao=" + controleSequencialGravacao + ", dtaVencimento=" + dtaVencimento + ", dtaEmissao=" + dtaEmissao + ", identificadorUnicoRecurso=" + identificadorUnicoRecurso + ", cnlRecursoReferencia=" + cnlRecursoReferencia + ", Ddd=" + Ddd + ", numTelefone=" + numTelefone + ", caracteristicaRecurso=" + caracteristicaRecurso + ", degrauRecurso=" + degrauRecurso + ", dtaLigacao=" + dtaLigacao + ", cnlLocalidadeChamada=" + cnlLocalidadeChamada + ", nomeLocalidadeChamada=" + nomeLocalidadeChamada + ", ufTelefoneChamado=" + ufTelefoneChamado + ", codNacionalInternacional=" + codNacionalInternacional + ", codOperadora=" + codOperadora + ", descOperadora=" + descOperadora + ", codPaisChamado=" + codPaisChamado + ", areaDdd=" + areaDdd + ", numTelefoneChamado=" + numTelefoneChamado + ", conjugadoNumeroTelefoneChamado=" + conjugadoNumeroTelefoneChamado + ", duracaoLigacao=" + duracaoLigacao + ", categoria=" + categoria + ", descCategoria=" + descCategoria + ", horLigacao=" + horLigacao + ", tipChamada=" + tipChamada + ", grupoHorTarifario=" + grupoHorTarifario + ", descHorTarifacio=" + descHorTarifario + ", degrauLigacao=" + degrauLigacao + ", sinalValLigacao=" + sinalValLigacao + ", aliquotaICMS=" + aliquotaICMS + ", valLigacaoComImposto=" + valLigacaoComImposto + ", classeServico=" + classeServico + '}';
     }
 
 }
