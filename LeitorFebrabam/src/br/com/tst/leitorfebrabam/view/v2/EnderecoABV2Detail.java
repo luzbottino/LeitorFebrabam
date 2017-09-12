@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.tst.leitorfebrabam.view;
+package br.com.tst.leitorfebrabam.view.v2;
 
-import br.com.tst.leitorfebrabam.model.EnderecoABV2;
+import br.com.tst.leitorfebrabam.model.v2.EnderecoABV2;
 import javax.swing.JFrame;
 
 /**

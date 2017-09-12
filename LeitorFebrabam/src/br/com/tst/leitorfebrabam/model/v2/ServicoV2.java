@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.tst.leitorfebrabam.model;
+package br.com.tst.leitorfebrabam.model.v2;
 
 /**
  *
@@ -11,7 +11,7 @@ package br.com.tst.leitorfebrabam.model;
  */
 public class ServicoV2 {
 
-    private String tipoServico;
+    private String tipoRegistro;
     private int controleSequencialGravacao;
     private String dtaVencimento;
     private String dtaEmissao;
@@ -41,12 +41,12 @@ public class ServicoV2 {
     private String valLigacao;
     private String classeServico;
 
-    public String getTipoServico() {
-        return tipoServico;
+    public String getTipoRegistro() {
+        return tipoRegistro;
     }
 
-    public void setTipoServico(String tipoServico) {
-        this.tipoServico = tipoServico;
+    public void setTipoRegistro(String tipoRegistro) {
+        this.tipoRegistro = tipoRegistro;
     }
 
     public int getControleSequencialGravacao() {
@@ -275,7 +275,7 @@ public class ServicoV2 {
 
     @Override
     public String toString() {
-        return "ServicoV2{" + "tipoServico=" + tipoServico + ", controleSequencialGravacao=" + controleSequencialGravacao + ", dtaVencimento=" + dtaVencimento + ", dtaEmissao=" + dtaEmissao + ", identUnicoRecurso=" + identUnicoRecurso + ", cnlRecursoReferencia=" + cnlRecursoReferencia + ", ddd=" + ddd + ", numTelefone=" + numTelefone + ", caracteristicaRecurso=" + caracteristicaRecurso + ", dtaServico=" + dtaServico + ", cnlLocalidadeChamada=" + cnlLocalidadeChamada + ", nomeLocalidadeChamada=" + nomeLocalidadeChamada + ", ufTelefoneChamado=" + ufTelefoneChamado + ", codNacionalInternacional=" + codNacionalInternacional + ", codOperadora=" + codOperadora + ", descOperadora=" + descOperadora + ", codPaisChamado=" + codPaisChamado + ", areaDdd=" + areaDdd + ", numTelefoneChamado=" + numTelefoneChamado + ", conjugadoTelefoneChamado=" + conjugadoTelefoneChamado + ", duracaoLigacao=" + duracaoLigacao + ", horarioLigacao=" + horarioLigacao + ", grupoCategoria=" + grupoCategoria + ", descGrupoCategoria=" + descGrupoCategoria + ", categoria=" + categoria + ", descCategoria=" + descCategoria + ", sinalValLigacao=" + sinalValLigacao + ", valLigacao=" + valLigacao + ", classeServico=" + classeServico + '}';
+        return "ServicoV2{" + "tipoServico=" + tipoRegistro + ", controleSequencialGravacao=" + controleSequencialGravacao + ", dtaVencimento=" + dtaVencimento + ", dtaEmissao=" + dtaEmissao + ", identUnicoRecurso=" + identUnicoRecurso + ", cnlRecursoReferencia=" + cnlRecursoReferencia + ", ddd=" + ddd + ", numTelefone=" + numTelefone + ", caracteristicaRecurso=" + caracteristicaRecurso + ", dtaServico=" + dtaServico + ", cnlLocalidadeChamada=" + cnlLocalidadeChamada + ", nomeLocalidadeChamada=" + nomeLocalidadeChamada + ", ufTelefoneChamado=" + ufTelefoneChamado + ", codNacionalInternacional=" + codNacionalInternacional + ", codOperadora=" + codOperadora + ", descOperadora=" + descOperadora + ", codPaisChamado=" + codPaisChamado + ", areaDdd=" + areaDdd + ", numTelefoneChamado=" + numTelefoneChamado + ", conjugadoTelefoneChamado=" + conjugadoTelefoneChamado + ", duracaoLigacao=" + duracaoLigacao + ", horarioLigacao=" + horarioLigacao + ", grupoCategoria=" + grupoCategoria + ", descGrupoCategoria=" + descGrupoCategoria + ", categoria=" + categoria + ", descCategoria=" + descCategoria + ", sinalValLigacao=" + sinalValLigacao + ", valLigacao=" + valLigacao + ", classeServico=" + classeServico + '}';
     }
 
 }

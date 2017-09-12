@@ -6,14 +6,16 @@
 package br.com.tst.leitorfebrabam.worker;
 
 import br.com.tst.leitorfebrabam.file.Febrabam;
-import br.com.tst.leitorfebrabam.model.BilhetacaoV2;
-import br.com.tst.leitorfebrabam.model.EnderecoABV2;
-import br.com.tst.leitorfebrabam.model.HeaderV2;
-import br.com.tst.leitorfebrabam.model.ResumoV2;
-import br.com.tst.leitorfebrabam.model.ServicoV2;
+import br.com.tst.leitorfebrabam.model.v2.BilhetacaoV2;
+import br.com.tst.leitorfebrabam.model.v2.DescontoV2;
+import br.com.tst.leitorfebrabam.model.v2.EnderecoABV2;
+import br.com.tst.leitorfebrabam.model.v2.HeaderV2;
+import br.com.tst.leitorfebrabam.model.v2.ResumoV2;
+import br.com.tst.leitorfebrabam.model.v2.ServicoV2;
+import br.com.tst.leitorfebrabam.model.v2.TraillerV2;
 import br.com.tst.leitorfebrabam.model.V2;
 import br.com.tst.leitorfebrabam.util.CursorToolkitTwo;
-import br.com.tst.leitorfebrabam.view.FaturaV2;
+import br.com.tst.leitorfebrabam.view.v2.FaturaV2;
 import br.com.tst.leitorfebrabam.view.ProgressBar;
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -39,6 +41,7 @@ public class GenerateV2View extends SwingWorker<V2, V2> {
     private List<EnderecoABV2> enderecosABV2;
     private List<BilhetacaoV2> bilhetacoesV2;
     private List<ServicoV2> servicosV2;
+    private List<DescontoV2> descontosV2;
 
     public GenerateV2View(Febrabam febrabam, ProgressBar progressBar, JFrame jFrame) {
         this.febrabam = febrabam;
@@ -55,6 +58,7 @@ public class GenerateV2View extends SwingWorker<V2, V2> {
         enderecosABV2 = new ArrayList<>();
         bilhetacoesV2 = new ArrayList<>();
         servicosV2 = new ArrayList<>();
+        descontosV2 = new ArrayList<>();
 
         int totalOfLines = febrabam.getTotalOfLines();
 
@@ -67,6 +71,7 @@ public class GenerateV2View extends SwingWorker<V2, V2> {
         v2.setEnderecosABV2(enderecosABV2);
         v2.setBilhetacoesV2(bilhetacoesV2);
         v2.setServicosV2(servicosV2);
+        v2.setDescontosV2(descontosV2);
 
         febrabam.closeFebrabam();
         return v2;
@@ -83,6 +88,10 @@ public class GenerateV2View extends SwingWorker<V2, V2> {
             bilhetacoesV2.add(buildBilhete(line));
         } else if (line.charAt(0) == '4') {
             servicosV2.add(buildServico(line));
+        } else if (line.charAt(0) == '5') {
+            descontosV2.add(buildDesconto(line));
+        } else if (line.charAt(0) == '9') {
+            v2.setTrailler(buildTrailler(line));
         }
     }
 
@@ -204,8 +213,8 @@ public class GenerateV2View extends SwingWorker<V2, V2> {
 
     private ServicoV2 buildServico(String line) {
         ServicoV2 servicoV2 = new ServicoV2();
-        
-        servicoV2.setTipoServico(line.substring(0, 1));
+
+        servicoV2.setTipoRegistro(line.substring(0, 1));
         servicoV2.setControleSequencialGravacao(Integer.valueOf(line.substring(1, 13)));
         servicoV2.setDtaVencimento(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(formatDate(line.substring(13, 21)))));
         servicoV2.setDtaEmissao(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(21, 29))));
@@ -234,12 +243,54 @@ public class GenerateV2View extends SwingWorker<V2, V2> {
         servicoV2.setSinalValLigacao(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(257, 258))));
         servicoV2.setValLigacao(formatMonetary(line.substring(258, 271)).toString());
         servicoV2.setClasseServico(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(271, 276))));
-        
-        
-        
-        System.out.println(servicoV2);
-                
+
         return servicoV2;
+    }
+
+    private DescontoV2 buildDesconto(String line) {
+        DescontoV2 descontoV2 = new DescontoV2();
+
+        descontoV2.setTipoRegistro(line.substring(0, 1));
+        descontoV2.setControleSequencialGravacao(Integer.valueOf(line.substring(1, 13)));
+        descontoV2.setDtaVencimento(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(formatDate(line.substring(13, 21)))));
+        descontoV2.setDtaEmissao(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(formatDate(line.substring(21, 29)))));
+        descontoV2.setIdentUnicoRecurso(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(29, 54))));
+        descontoV2.setIdentContaUnica(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(54, 79))));
+        descontoV2.setCnlRecursoReferencia(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(79, 84))));
+        descontoV2.setDdd(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(84, 86))));
+        descontoV2.setNumTelefone(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(86, 96))));
+        descontoV2.setGrupoCategoria(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(96, 99))));
+        descontoV2.setDescGrupoCategoria(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(99, 179))));
+        descontoV2.setSinalValLigacao(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(179, 180))));
+        descontoV2.setBaseCalcDesconto(formatMonetary(line.substring(180, 193)).toString());
+        descontoV2.setPercentualDesconto(formatPercent(line.substring(193, 198)).toString());
+        descontoV2.setValLigacao(formatMonetary(line.substring(198, 211)).toString());
+        descontoV2.setDtaInicioAcerto(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(formatDate(line.substring(211, 219)))));
+        descontoV2.setHorInicioAcerto(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(formatHorCall(line.substring(219, 225)))));
+        descontoV2.setDtaFimAcerto(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(formatDate(line.substring(225, 233)))));
+        descontoV2.setHorFimAcerto(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(formatHorCall(line.substring(233, 239)))));
+        descontoV2.setClasseServico(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(239, 244))));
+
+        return descontoV2;
+    }
+
+    private TraillerV2 buildTrailler(String line) {
+        TraillerV2 traillerV2 = new TraillerV2();
+
+        traillerV2.setTipoRegistro(line.substring(0, 1));
+        traillerV2.setControleSequencialGravacao(Integer.valueOf(line.substring(1, 13)));
+        traillerV2.setCodCliente(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(13, 28))));
+        traillerV2.setIdentContaUnica(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(28, 53))));
+        traillerV2.setDtaVencimento(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(formatDate(line.substring(53, 61)))));
+        traillerV2.setDtaEmissao(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(formatDate(line.substring(61, 69)))));
+        traillerV2.setQtdRegistros(Integer.valueOf(line.substring(69, 81)));
+        traillerV2.setQtdLinhasTelefonicas(Integer.valueOf(line.substring(81, 93)));
+        traillerV2.setSinalTotal(verifyWhiteSpaces(removeWhiteSpacesInTheEnd(line.substring(93, 94))));
+        traillerV2.setValTotal(formatMonetary(line.substring(94, 107)));
+        
+        System.out.println(traillerV2.toString());
+        
+        return traillerV2;
     }
 
     @Override
@@ -280,6 +331,10 @@ public class GenerateV2View extends SwingWorker<V2, V2> {
     //Formata para o padrão monetário do LayoutFebrabam V2 11 casas com 2 decimais
     private BigDecimal formatMonetary(String value) {
         return new BigDecimal(value.substring(0, 11) + "." + value.substring(11, 13));
+    }
+
+    private BigDecimal formatPercent(String value) {
+        return new BigDecimal(value.substring(0, 3) + "." + value.substring(3, 5));
     }
 
     //Veifica se o campo veio em branco

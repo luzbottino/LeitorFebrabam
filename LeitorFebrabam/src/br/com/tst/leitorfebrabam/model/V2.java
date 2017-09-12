@@ -5,6 +5,13 @@
  */
 package br.com.tst.leitorfebrabam.model;
 
+import br.com.tst.leitorfebrabam.model.v2.DescontoV2;
+import br.com.tst.leitorfebrabam.model.v2.ServicoV2;
+import br.com.tst.leitorfebrabam.model.v2.ResumoV2;
+import br.com.tst.leitorfebrabam.model.v2.HeaderV2;
+import br.com.tst.leitorfebrabam.model.v2.TraillerV2;
+import br.com.tst.leitorfebrabam.model.v2.BilhetacaoV2;
+import br.com.tst.leitorfebrabam.model.v2.EnderecoABV2;
 import java.util.List;
 
 /**
@@ -18,6 +25,8 @@ public class V2 {
     private List<EnderecoABV2> enderecosABV2;
     private List<BilhetacaoV2> bilhetacoesV2;
     private List<ServicoV2> servicosV2;
+    private List<DescontoV2> descontosV2;
+    private TraillerV2 trailler;
 
     public HeaderV2 getHeader() {
         return header;
@@ -59,9 +68,25 @@ public class V2 {
         this.servicosV2 = servicosV2;
     }
 
+    public List<DescontoV2> getDescontosV2() {
+        return descontosV2;
+    }
+
+    public void setDescontosV2(List<DescontoV2> descontosV2) {
+        this.descontosV2 = descontosV2;
+    }
+
+    public TraillerV2 getTrailler() {
+        return trailler;
+    }
+
+    public void setTrailler(TraillerV2 trailler) {
+        this.trailler = trailler;
+    }
+
     @Override
     public String toString() {
-        return "V2{" + "header=" + header + ", resumosV2=" + resumosV2 + ", enderecosABV2=" + enderecosABV2 + ", bilhetacoesV2=" + bilhetacoesV2 + ", servicosV2=" + servicosV2 + '}';
+        return "V2{" + "header=" + header + ", resumosV2=" + resumosV2 + ", enderecosABV2=" + enderecosABV2 + ", bilhetacoesV2=" + bilhetacoesV2 + ", servicosV2=" + servicosV2 + ", descontosV2=" + descontosV2 + ", trailler=" + trailler + '}';
     }
 
 }

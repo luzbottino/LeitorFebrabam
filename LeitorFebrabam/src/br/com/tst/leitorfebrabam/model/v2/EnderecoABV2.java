@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package br.com.tst.leitorfebrabam.model;
+package br.com.tst.leitorfebrabam.model.v2;
 
 /**
  *

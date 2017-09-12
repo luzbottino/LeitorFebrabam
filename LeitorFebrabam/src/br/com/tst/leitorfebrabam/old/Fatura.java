@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.tst.leitorfebrabam.model;
+package br.com.tst.leitorfebrabam.old;
 
 import java.math.BigDecimal;
 
