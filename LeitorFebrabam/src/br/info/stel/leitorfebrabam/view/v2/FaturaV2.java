@@ -15,8 +15,12 @@ import br.info.stel.leitorfebrabam.view.MyTableModel;
 import java.util.Vector;
 import javax.swing.JFrame;
 import javax.swing.ListSelectionModel;
+import javax.swing.RowFilter;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -24,6 +28,8 @@ import javax.swing.event.ListSelectionListener;
  */
 public class FaturaV2 extends javax.swing.JFrame {
 
+    private TableRowSorter<MyTableModel> sorterBilhete;
+    private TableRowSorter<MyTableModel> sorterServico;
     private V2 v2;
 
     /**
@@ -43,6 +49,8 @@ public class FaturaV2 extends javax.swing.JFrame {
         configServicoPanel();
         configDescontoPanel();
         configTraillerPanel();
+        configJTextFieldFiltroCategoriaBilhete();
+        configJTextFieldFiltroCategoriaServico();
     }
 
     /**
@@ -103,9 +111,13 @@ public class FaturaV2 extends javax.swing.JFrame {
         jPanelChamadas = new javax.swing.JPanel();
         jScrollPaneBilhetacao = new javax.swing.JScrollPane();
         jTableBilhetacao = new javax.swing.JTable();
+        jTextFieldFiltroCategoriaBilhete = new javax.swing.JTextField();
+        jLabelFiltroCategoriaBilhete = new javax.swing.JLabel();
         jPanelServicos = new javax.swing.JPanel();
         jScrollPaneServico = new javax.swing.JScrollPane();
         jTableServico = new javax.swing.JTable();
+        jLabelFiltroCategoriaServico = new javax.swing.JLabel();
+        jTextFieldFiltroCategoriaServico = new javax.swing.JTextField();
         jPanelDesconto = new javax.swing.JPanel();
         jScrollPaneDesconto = new javax.swing.JScrollPane();
         jTableDesconto = new javax.swing.JTable();
@@ -605,20 +617,42 @@ public class FaturaV2 extends javax.swing.JFrame {
         ));
         jScrollPaneBilhetacao.setViewportView(jTableBilhetacao);
 
+        jTextFieldFiltroCategoriaBilhete.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldFiltroCategoriaBilhete.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jTextFieldFiltroCategoriaBilhete.setForeground(new java.awt.Color(51, 51, 51));
+        jTextFieldFiltroCategoriaBilhete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldFiltroCategoriaBilheteActionPerformed(evt);
+            }
+        });
+
+        jLabelFiltroCategoriaBilhete.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabelFiltroCategoriaBilhete.setForeground(new java.awt.Color(51, 51, 51));
+        jLabelFiltroCategoriaBilhete.setText("Filtro de Categoria:");
+
         javax.swing.GroupLayout jPanelChamadasLayout = new javax.swing.GroupLayout(jPanelChamadas);
         jPanelChamadas.setLayout(jPanelChamadasLayout);
         jPanelChamadasLayout.setHorizontalGroup(
             jPanelChamadasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelChamadasLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPaneBilhetacao, javax.swing.GroupLayout.DEFAULT_SIZE, 735, Short.MAX_VALUE)
+                .addGroup(jPanelChamadasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPaneBilhetacao, javax.swing.GroupLayout.DEFAULT_SIZE, 735, Short.MAX_VALUE)
+                    .addGroup(jPanelChamadasLayout.createSequentialGroup()
+                        .addComponent(jLabelFiltroCategoriaBilhete)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldFiltroCategoriaBilhete)))
                 .addContainerGap())
         );
         jPanelChamadasLayout.setVerticalGroup(
             jPanelChamadasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelChamadasLayout.createSequentialGroup()
+            .addGroup(jPanelChamadasLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPaneBilhetacao, javax.swing.GroupLayout.DEFAULT_SIZE, 309, Short.MAX_VALUE)
+                .addGroup(jPanelChamadasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldFiltroCategoriaBilhete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelFiltroCategoriaBilhete))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPaneBilhetacao, javax.swing.GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -639,20 +673,42 @@ public class FaturaV2 extends javax.swing.JFrame {
         ));
         jScrollPaneServico.setViewportView(jTableServico);
 
+        jLabelFiltroCategoriaServico.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabelFiltroCategoriaServico.setForeground(new java.awt.Color(51, 51, 51));
+        jLabelFiltroCategoriaServico.setText("Filtro de Categoria:");
+
+        jTextFieldFiltroCategoriaServico.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldFiltroCategoriaServico.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jTextFieldFiltroCategoriaServico.setForeground(new java.awt.Color(51, 51, 51));
+        jTextFieldFiltroCategoriaServico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldFiltroCategoriaServicoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelServicosLayout = new javax.swing.GroupLayout(jPanelServicos);
         jPanelServicos.setLayout(jPanelServicosLayout);
         jPanelServicosLayout.setHorizontalGroup(
             jPanelServicosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelServicosLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPaneServico, javax.swing.GroupLayout.DEFAULT_SIZE, 735, Short.MAX_VALUE)
+                .addGroup(jPanelServicosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPaneServico, javax.swing.GroupLayout.DEFAULT_SIZE, 735, Short.MAX_VALUE)
+                    .addGroup(jPanelServicosLayout.createSequentialGroup()
+                        .addComponent(jLabelFiltroCategoriaServico)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldFiltroCategoriaServico)))
                 .addContainerGap())
         );
         jPanelServicosLayout.setVerticalGroup(
             jPanelServicosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelServicosLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPaneServico, javax.swing.GroupLayout.DEFAULT_SIZE, 309, Short.MAX_VALUE)
+                .addGroup(jPanelServicosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelFiltroCategoriaServico)
+                    .addComponent(jTextFieldFiltroCategoriaServico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPaneServico, javax.swing.GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1000,6 +1056,14 @@ public class FaturaV2 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jTextFieldFiltroCategoriaBilheteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldFiltroCategoriaBilheteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldFiltroCategoriaBilheteActionPerformed
+
+    private void jTextFieldFiltroCategoriaServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldFiltroCategoriaServicoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldFiltroCategoriaServicoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
@@ -1014,6 +1078,8 @@ public class FaturaV2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelDataVencimentoHeaderTrailler;
     private javax.swing.JLabel jLabelDtaEmissaoTrailler;
     private javax.swing.JLabel jLabelEmissao;
+    private javax.swing.JLabel jLabelFiltroCategoriaBilhete;
+    private javax.swing.JLabel jLabelFiltroCategoriaServico;
     private javax.swing.JLabel jLabelIdentificadorContaUnica;
     private javax.swing.JLabel jLabelIdentificadorContaUnicaHeader;
     private javax.swing.JLabel jLabelIdentificadorContaUnicaHeaderTrailler;
@@ -1070,6 +1136,8 @@ public class FaturaV2 extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldDataVencimentoHeaderTrailler;
     private javax.swing.JTextField jTextFieldDtaEmissaoTrailler;
     private javax.swing.JTextField jTextFieldEmissao;
+    private javax.swing.JTextField jTextFieldFiltroCategoriaBilhete;
+    private javax.swing.JTextField jTextFieldFiltroCategoriaServico;
     private javax.swing.JTextField jTextFieldIdentificadorContaUnicaHeader;
     private javax.swing.JTextField jTextFieldIdentificadorContaUnicaHeaderTrailler;
     private javax.swing.JTextField jTextFieldNomeCliente;
@@ -1121,14 +1189,89 @@ public class FaturaV2 extends javax.swing.JFrame {
 
         jTableBilhetacao.setModel(myTableModel);
 
+        sorterBilhete = new TableRowSorter<MyTableModel>(myTableModel);
+
+        jTableBilhetacao.setRowSorter(sorterBilhete);
+
         selectBilhetacaoListener();
+    }
+
+    private void newFilterBilhetacao() {
+        RowFilter<MyTableModel, Object> rf = null;
+        try {
+            rf = RowFilter.regexFilter(jTextFieldFiltroCategoriaBilhete.getText(), 3);
+        } catch (java.util.regex.PatternSyntaxException e) {
+            return;
+        }
+        sorterBilhete.setRowFilter(rf);
+    }
+
+    private void configJTextFieldFiltroCategoriaBilhete() {
+        jTextFieldFiltroCategoriaBilhete.getDocument().addDocumentListener(new DocumentListener() {
+
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                jTableBilhetacao.getSelectionModel().clearSelection();
+                newFilterBilhetacao();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                jTableBilhetacao.getSelectionModel().clearSelection();
+                newFilterBilhetacao();
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                jTableBilhetacao.getSelectionModel().clearSelection();
+                newFilterBilhetacao();
+            }
+        });
     }
 
     private void configServicoPanel() {
         MyTableModel myTableModel = new MyTableModel(getServicoRowData(), getColumnNames("Controle Sequencial de Gravacação", "Nº de Telefone", "Grupo da Categoria", "Desc do Grupo da Categoria", "Categoria", "Desc da Categoria", "Valor da Ligacao"));
         jTableServico.setModel(myTableModel);
 
+        sorterServico = new TableRowSorter<MyTableModel>(myTableModel);
+
         selectServicoListener();
+
+        jTableServico.setRowSorter(sorterServico);
+    }
+    
+    private void configJTextFieldFiltroCategoriaServico(){
+        jTextFieldFiltroCategoriaServico.getDocument().addDocumentListener(new DocumentListener() {
+
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                jTableServico.getSelectionModel().clearSelection();
+                newFilterServico();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                jTableServico.getSelectionModel().clearSelection();
+                newFilterServico();
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                jTableServico.getSelectionModel().clearSelection();
+                newFilterServico();
+            }
+        });
+    }
+
+    private void newFilterServico() {
+        RowFilter<MyTableModel, Object> rf = null;
+        //If current expression doesn't parse, don't update.
+        try {
+            rf = RowFilter.regexFilter(jTextFieldFiltroCategoriaServico.getText(), 4);
+        } catch (java.util.regex.PatternSyntaxException e) {
+            return;
+        }
+        sorterServico.setRowFilter(rf);
     }
 
     private void configDescontoPanel() {
@@ -1137,7 +1280,7 @@ public class FaturaV2 extends javax.swing.JFrame {
 
         selectDescontoListener();
     }
-    
+
     private void configTraillerPanel() {
         jTextFieldTipoRegistroTrailler.setText(v2.getTrailler().getTipoRegistro());
         jTextFieldControleSequencialGravacaoTrailler.setText(String.valueOf(v2.getTrailler().getControleSequencialGravacao()));
